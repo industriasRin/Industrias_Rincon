@@ -1,0 +1,11 @@
+# Mac
+.DS_Store
+
+# Respaldos / comprimidos
+*.zip
+
+# Dependencias (por si acaso)
+node_modules/
+
+# Netlify
+.netlify/

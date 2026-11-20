@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Productos y Servicios — Industrias Rincón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E8590C; --orange-dark:#D14E0A; --black:#0A0A0A; --dark:#1A1A1A;
+    --white:#FFFFFF; --gray:#F5F5F3; --gray2:#E8E8E6; --muted:#6B7280; --text:#1F2937;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#555;font-family:'Inter',sans-serif;color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  h1,h2,h3,h4,.display{font-family:'Montserrat',sans-serif;}
+
+  /* ---------- Página A4 ---------- */
+  .page{
+    position:relative; width:210mm; min-height:297mm; margin:10mm auto; background:var(--white);
+    overflow:hidden; box-shadow:0 6px 30px rgba(0,0,0,.4); page-break-after:always; break-after:page;
+  }
+  .page:last-child{page-break-after:auto;}
+  .pad{padding:22mm 20mm;}
+
+  /* ---------- Barra de marca ---------- */
+  .brandbar{display:flex;align-items:center;gap:10px;padding:8mm 20mm;background:var(--black);color:#fff;}
+  .brandbar .logo{display:flex;align-items:center;gap:10px;}
+  .brandbar .logo b{font-family:'Montserrat';font-weight:800;font-size:15px;letter-spacing:.5px;}
+  .brandbar .logo span{color:var(--orange);}
+  .brandbar .tag{margin-left:auto;font-size:11px;color:#bbb;letter-spacing:1px;text-transform:uppercase;}
+  .foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;
+    padding:6mm 20mm;background:var(--gray);font-size:10px;color:var(--muted);letter-spacing:.5px;}
+  .foot b{color:var(--black);}
+
+  /* ---------- Portada ---------- */
+  .cover{background:linear-gradient(180deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;display:flex;flex-direction:column;}
+  .cover-img{height:150mm;background-size:cover;background-position:center;position:relative;}
+  .cover-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.25),rgba(10,10,10,.9));}
+  .cover-body{flex:1;padding:16mm 20mm;display:flex;flex-direction:column;justify-content:center;}
+  .cover .logo{display:flex;align-items:center;gap:12px;margin-bottom:10mm;}
+  .cover .logo b{font-family:'Montserrat';font-weight:900;font-size:22px;letter-spacing:1px;}
+  .cover .logo span{color:var(--orange);}
+  .cover h1{font-size:46px;font-weight:900;line-height:1.02;letter-spacing:-1px;}
+  .cover h1 em{color:var(--orange);font-style:normal;}
+  .cover .sub{margin-top:8mm;font-size:16px;color:#cfcfcf;max-width:150mm;}
+  .cover .meta{margin-top:12mm;display:flex;gap:28px;font-size:12px;color:#9a9a9a;letter-spacing:1px;text-transform:uppercase;}
+  .cover .meta b{color:var(--orange);}
+  .badge-years{position:absolute;top:8mm;right:20mm;z-index:3;background:var(--orange);color:#fff;
+    width:30mm;height:30mm;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:'Montserrat';font-weight:800;line-height:1;box-shadow:0 6px 20px rgba(0,0,0,.4);}
+  .badge-years b{font-size:22px;}
+  .badge-years small{font-size:8px;letter-spacing:1px;margin-top:3px;}
+
+  /* ---------- Encabezados de sección ---------- */
+  .kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:var(--orange);border-left:4px solid var(--orange);padding-left:10px;margin-bottom:8px;}
+  .sec-title{font-size:32px;font-weight:800;color:var(--black);letter-spacing:-.5px;line-height:1.05;margin-bottom:6mm;}
+  .lead{font-size:14px;line-height:1.7;color:#374151;max-width:155mm;}
+
+  /* ---------- Sobre nosotros ---------- */
+  .about-img{height:72mm;border-radius:10px;background-size:cover;background-position:center;margin:8mm 0;}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:4mm;}
+  .stat{background:var(--gray);border-radius:10px;padding:7mm 6mm;text-align:center;}
+  .stat b{display:block;font-family:'Montserrat';font-weight:900;font-size:30px;color:var(--orange);line-height:1;}
+  .stat span{font-size:11px;color:var(--muted);letter-spacing:.5px;}
+
+  /* ---------- Producto ---------- */
+  .prod-hero{height:78mm;border-radius:10px;background-size:cover;background-position:center;margin-bottom:7mm;position:relative;}
+  .prod-hero .chip{position:absolute;left:5mm;bottom:5mm;background:var(--orange);color:#fff;
+    font-family:'Montserrat';font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:30px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:7mm;}
+  .spec h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--black);
+    margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--gray2);}
+  .spec ul{list-style:none;}
+  .spec li{font-size:12.5px;padding:4px 0 4px 16px;position:relative;color:#374151;}
+  .spec li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--orange);border-radius:2px;}
+  .usecase{background:var(--gray);border-radius:10px;padding:6mm;margin-top:7mm;}
+  .usecase b{font-family:'Montserrat';font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--orange);}
+  .usecase p{font-size:12.5px;line-height:1.6;color:#374151;margin-top:5px;}
+
+  /* tabla de calibres */
+  table.tbl{width:100%;border-collapse:collapse;margin-top:3mm;font-size:12px;}
+  table.tbl th{background:var(--black);color:#fff;font-family:'Montserrat';font-weight:600;font-size:11px;
+    letter-spacing:1px;text-transform:uppercase;padding:8px 10px;text-align:left;}
+  table.tbl td{padding:7px 10px;border-bottom:1px solid var(--gray2);color:#374151;}
+  table.tbl tr:nth-child(even) td{background:#faf9f7;}
+
+  /* ---------- Servicios ---------- */
+  .needs{display:grid;grid-template-columns:repeat(2,1fr);gap:5mm;margin-top:6mm;}
+  .need{display:flex;gap:10px;align-items:flex-start;background:var(--gray);border-radius:10px;padding:5mm;}
+  .need .n{font-family:'Montserrat';font-weight:900;color:var(--orange);font-size:18px;line-height:1;}
+  .need p{font-size:12.5px;color:#374151;line-height:1.4;}
+  .inst{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:7mm;}
+  .inst .card{border:1.5px solid var(--gray2);border-radius:10px;padding:6mm;text-align:center;}
+  .inst .card b{display:block;font-family:'Montserrat';font-size:13px;color:var(--black);margin-bottom:4px;}
+  .inst .card span{font-size:11.5px;color:var(--muted);line-height:1.4;}
+
+  /* ---------- Cobertura ---------- */
+  .cover2{background:var(--black);color:#fff;}
+  .cover2 .sec-title{color:#fff;}
+  .zones{display:grid;grid-template-columns:repeat(2,1fr);gap:5mm;margin-top:7mm;}
+  .zone{background:#171717;border:1px solid #2a2a2a;border-radius:10px;padding:6mm;}
+  .zone b{font-family:'Montserrat';color:var(--orange);font-size:13px;letter-spacing:1px;text-transform:uppercase;}
+  .zone p{font-size:12.5px;color:#cfcfcf;margin-top:5px;line-height:1.5;}
+
+  /* ---------- Contacto ---------- */
+  .contact{background:linear-gradient(180deg,#0a0a0a,#1a1a1a);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+  .contact h2{font-size:38px;font-weight:900;letter-spacing:-.5px;}
+  .contact h2 em{color:var(--orange);font-style:normal;}
+  .contact p{color:#cfcfcf;font-size:15px;margin-top:6mm;max-width:140mm;line-height:1.6;}
+  .clist{margin-top:12mm;display:flex;flex-direction:column;gap:5mm;font-size:16px;}
+  .clist .row{display:flex;align-items:center;gap:12px;justify-content:center;}
+  .clist .row b{color:var(--orange);font-family:'Montserrat';font-size:13px;letter-spacing:1px;text-transform:uppercase;min-width:34mm;text-align:right;}
+  .clist .row span{font-size:16px;}
+  .wa{margin-top:12mm;background:#25D366;color:#fff;font-family:'Montserrat';font-weight:700;font-size:15px;
+    padding:12px 30px;border-radius:40px;letter-spacing:.5px;}
+
+  /* ---------- Impresión ---------- */
+  @page{size:A4;margin:0;}
+  @media print{
+    html,body{background:#fff;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto;}
+    .noprint{display:none !important;}
+  }
+  .bar{position:fixed;top:0;left:0;right:0;z-index:99;background:var(--orange);color:#fff;text-align:center;
+    padding:10px;font-family:'Inter';font-size:13px;}
+  .bar b{font-weight:700;}
+</style>
+</head>
+<body>
+
+<div class="bar noprint">📄 Para guardar como PDF: pulsa <b>Ctrl/Cmd + P</b> → Destino <b>"Guardar como PDF"</b> → Márgenes <b>Ninguno</b> → activa <b>Gráficos de fondo</b>.</div>
+
+<!-- ============ PORTADA ============ -->
+<section class="page cover">
+  <div class="cover-img" style="background-image:url('fotos/malla-cerramientos.jpg')">
+    <div class="badge-years"><b>IR</b><small>FÓMEQUE</small></div>
+  </div>
+  <div class="cover-body">
+    <div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div>
+    <h1>CATÁLOGO DE<br><em>PRODUCTOS</em> Y SERVICIOS</h1>
+    <p class="sub">Fabricación de malla eslabonada y maquinaria agrícola, hecha en Fómeque, Cundinamarca. Seguridad, calidad y cumplimiento para el campo y la ciudad.</p>
+    <div class="meta"><span>Malla eslabonada</span><span>Maquinaria agrícola</span><span>Instalación de cerramientos</span></div>
+  </div>
+</section>
+
+<!-- ============ SOBRE NOSOTROS ============ -->
+<section class="page">
+  <div class="brandbar"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Sobre nosotros</div></div>
+  <div class="pad">
+    <span class="kicker">Quiénes somos</span>
+    <h2 class="sec-title">Fabricación local<br>para el oriente de Cundinamarca</h2>
+    <p class="lead">Industrias Rincón es una empresa familiar de Fómeque dedicada a la fabricación de malla eslabonada y maquinaria agrícola. Producimos directamente en nuestro taller, lo que nos permite ofrecer precio de fábrica, calidad que usted puede revisar antes de comprar y entregas ágiles en toda la región. Nuestro propósito es ser un aliado de confianza para brindar seguridad y soluciones al campo, la finca y la obra.</p>
+    <div class="about-img" style="background-image:url('fotos/maquina-malla.jpg')"></div>
+    <div class="stats">
+      <div class="stat"><b>100%</b><span>FABRICACIÓN PROPIA</span></div>
+      <div class="stat"><b>18+</b><span>REFERENCIAS DE MALLA</span></div>
+      <div class="stat"><b>24/7</b><span>ASESORÍA POR WHATSAPP</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>INDUSTRIAS RINCÓN</b> · Fómeque, Cundinamarca</span><span>industriasrincon.com</span></div>
+</section>
+
+<!-- ============ MALLA ESLABONADA ============ -->
+<section class="page">
+  <div class="brandbar"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Producto</div></div>
+  <div class="pad">
+    <span class="kicker">Producto principal</span>
+    <h2 class="sec-title">Malla eslabonada</h2>
+    <div class="prod-hero" style="background-image:url('fotos/malla.jpg')"><span class="chip">Fabricada en alambre galvanizado</span></div>
+    <p class="lead">Fabricada en alambre galvanizado en caliente. Utilizada para cerramientos rurales, urbanos e industriales, protección de áreas, canchas y polideportivos, fabricación de portones y puertas, y usos particulares.</p>
+    <div class="cols" style="margin-top:7mm;">
+      <div class="spec">
+        <h4>Presentaciones</h4>
+        <ul>
+          <li>Alturas: 1,00 · 1,20 · 1,50 · 1,80 · 2,00 · 2,50 m</li>
+          <li>Largo de rollo: 10 m, 20 m o a la medida</li>
+          <li>Huecos: 1" · 1¼" · 1½" · 2" · 2¼" · 2½"</li>
+          <li>Medida personalizada según su proyecto</li>
+        </ul>
+      </div>
+      <div class="spec">
+        <h4>Calibres disponibles</h4>
+        <ul>
+          <li>Calibre 8 (4,19 mm)</li>
+          <li>Calibre 10 / 10,5 (3,40 / 3,26 mm)</li>
+          <li>Calibre 12 / 12,5 (2,77 / 2,50 mm)</li>
+          <li>Calibre 14 (2,11 mm)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="usecase">
+      <b>¿Para qué sirve?</b>
+      <p>Cerramiento de fincas y lotes, protección de cultivos y animales, encerramiento de obra, canchas múltiples y módulos de seguridad perimetral.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>INDUSTRIAS RINCÓN</b> · Malla eslabonada</span><span>Cotiza por WhatsApp +57 321 231 7971</span></div>
+</section>
+
+<!-- ============ TABLA DE REFERENCIAS ============ -->
+<section class="page">
+  <div class="brandbar"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Referencias</div></div>
+  <div class="pad">
+    <span class="kicker">Catálogo de malla</span>
+    <h2 class="sec-title">Combinaciones más pedidas</h2>
+    <p class="lead">Elegimos el calibre y el hueco según el uso: a menor hueco y mayor calibre, más resistencia. Todas las medidas se pueden personalizar. Los precios se cotizan según metraje y calibre; escríbanos para la cotización de su proyecto.</p>
+    <table class="tbl">
+      <thead><tr><th>Uso recomendado</th><th>Calibre</th><th>Hueco</th><th>Altura típica</th></tr></thead>
+      <tbody>
+        <tr><td>Cerramiento reforzado / industrial</td><td>10,5</td><td>1" – 1½"</td><td>1,80 – 2,00 m</td></tr>
+        <tr><td>Cerramiento de finca y lote</td><td>10,5 – 12,5</td><td>2" – 2½"</td><td>1,50 – 2,00 m</td></tr>
+        <tr><td>Protección de cultivos y animales</td><td>12,5</td><td>1½" – 2"</td><td>1,20 – 1,50 m</td></tr>
+        <tr><td>Canchas y polideportivos</td><td>10,5 – 12,5</td><td>2" – 2½"</td><td>2,00 – 2,50 m</td></tr>
+        <tr><td>Uso económico / liviano</td><td>14</td><td>2" – 2½"</td><td>1,00 – 1,50 m</td></tr>
+        <tr><td>Portones y puertas</td><td>10,5</td><td>2" – 2½"</td><td>a la medida</td></tr>
+      </tbody>
+    </table>
+    <div class="usecase"><b>Complementos para el cerramiento</b>
+      <p>Postes y tubería galvanizada, ángulos, alambre de púas, alambre de amarre y tensores. Lo surtimos todo para que su cerramiento quede completo.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>INDUSTRIAS RINCÓN</b> · Referencias de malla</span><span>Medidas personalizadas disponibles</span></div>
+</section>
+
+<!-- ============ MAQUINARIA ============ -->
+<section class="page">
+  <div class="brandbar"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Producto</div></div>
+  <div class="pad">
+    <span class="kicker">Línea agrícola</span>
+    <h2 class="sec-title">Maquinaria agrícola</h2>
+    <div class="prod-hero" style="background-image:url('fotos/maquinaria.jpg')"><span class="chip">Diseño y fabricación propia</span></div>
+    <p class="lead">Diseñamos y construimos maquinaria para el campo, pensada para las condiciones reales de nuestra región. Equipos robustos, de bajo mantenimiento y con repuestos a la mano.</p>
+    <div class="cols" style="margin-top:7mm;">
+      <div class="spec">
+        <h4>Bomba de ariete hidráulico</h4>
+        <ul>
+          <li>Bombea agua sin electricidad ni combustible</li>
+          <li>Aprovecha la caída de agua de quebradas y nacederos</li>
+          <li>Ideal para riego y abastecimiento de fincas</li>
+        </ul>
+      </div>
+      <div class="spec">
+        <h4>Máquina tejedora de malla</h4>
+        <ul>
+          <li>Teje malla eslabonada en distintos calibres y huecos</li>
+          <li>Moldes (caracolas) de 1¼" a 2½"</li>
+          <li>Diseño propio de Industrias Rincón</li>
+        </ul>
+      </div>
+    </div>
+    <div class="usecase"><b>Carrucha de arrastre</b>
+      <p>Equipo de arrastre para labores de finca y transporte de carga en terreno. Fabricada a la medida de su necesidad. Consulte disponibilidad y especificaciones.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>INDUSTRIAS RINCÓN</b> · Maquinaria agrícola</span><span>Fabricación a la medida</span></div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="page">
+  <div class="brandbar"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Servicios</div></div>
+  <div class="pad">
+    <span class="kicker">Instalaciones y obras</span>
+    <h2 class="sec-title">Instalamos su cerramiento</h2>
+    <p class="lead">No solo fabricamos: dejamos su cerramiento listo. Nuestro equipo mide, cotiza e instala con materiales propios, para que usted reciba la obra terminada y funcionando.</p>
+    <div class="prod-hero" style="background-image:url('fotos/malla-instalaciones.jpg');height:62mm;margin-top:6mm;"><span class="chip">Obra terminada y garantizada</span></div>
+    <h4 style="font-family:'Montserrat';font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--black);margin-top:8mm;">¿Qué lleva un cerramiento?</h4>
+    <div class="needs">
+      <div class="need"><span class="n">01</span><p>Malla eslabonada del calibre adecuado</p></div>
+      <div class="need"><span class="n">02</span><p>Postes y tubería galvanizada con gallinazo</p></div>
+      <div class="need"><span class="n">03</span><p>Alambre de púas y/o concertina en la parte superior</p></div>
+      <div class="need"><span class="n">04</span><p>Alambre de amarre, ángulos y tensores</p></div>
+    </div>
+    <div class="inst">
+      <div class="card"><b>Con pilotes</b><span>Postes de concreto y ángulo anclados al terreno</span></div>
+      <div class="card"><b>En obra civil</b><span>Sobre muro o sardinel existente</span></div>
+      <div class="card"><b>En platina</b><span>Fijación sobre placa de concreto</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>INDUSTRIAS RINCÓN</b> · Instalación de cerramientos</span><span>Medición y cotización sin costo</span></div>
+</section>
+
+<!-- ============ COBERTURA ============ -->
+<section class="page cover2">
+  <div class="brandbar" style="background:#000;"><div class="logo"><b>INDUSTRIAS <span>RINCÓN</span></b></div><div class="tag">Cobertura</div></div>
+  <div class="pad">
+    <span class="kicker">Despachos y cobertura</span>
+    <h2 class="sec-title">Llevamos su pedido<br>a toda la región</h2>
+    <p class="lead" style="color:#cfcfcf;">Nos enfocamos en la inmediatez: somos ágiles en la fabricación y la entrega. Despachamos malla, maquinaria y materiales de cerramiento a toda la zona de influencia y coordinamos envíos a otras regiones.</p>
+    <div class="zones">
+      <div class="zone"><b>Oriente de Cundinamarca</b><p>Fómeque, Ubaqué, Choachí, Cáqueza, Une, Chipaque y municipios cercanos.</p></div>
+      <div class="zone"><b>Bogotá y Sabana</b><p>Entregas coordinadas a la capital y alrededores.</p></div>
+      <div class="zone"><b>Llanos Orientales</b><p>Villavicencio y zona de los Llanos.</p></div>
+      <div class="zone"><b>Otras regiones</b><p>Consulte por despachos a nivel nacional según volumen.</p></div>
+    </div>
+  </div>
+  <div class="foot" style="background:#111;color:#999;"><span><b style="color:#fff;">INDUSTRIAS RINCÓN</b> · Cobertura</span><span>Entregas ágiles</span></div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="page contact">
+  <div class="pad" style="width:100%;">
+    <div class="logo" style="justify-content:center;display:flex;align-items:center;gap:12px;margin-bottom:8mm;">
+      <b style="font-family:'Montserrat';font-weight:900;font-size:22px;color:#fff;">INDUSTRIAS <span style="color:var(--orange);">RINCÓN</span></b>
+    </div>
+    <h2>Cotice su proyecto <em>hoy</em></h2>
+    <p>Cuéntenos qué necesita y le damos precio de fábrica. Asesoría, medición y cotización sin costo.</p>
+    <div class="clist">
+      <div class="row"><b>WhatsApp</b><span>+57 321 231 7971</span></div>
+      <div class="row"><b>Teléfono</b><span>+57 302 304 4286</span></div>
+      <div class="row"><b>Web</b><span>industriasrincon.com</span></div>
+      <div class="row"><b>Ubicación</b><span>Fómeque, Cundinamarca</span></div>
+    </div>
+    <div class="wa">Escríbanos por WhatsApp →</div>
+  </div>
+</section>
+
+</body>
+</html>

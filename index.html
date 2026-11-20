@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- ===== SEO ===== -->
+<title>Industrias Rincón | Maquinaria Agrícola y Malla Eslabonada — Fómeque</title>
+<meta name="description" content="Fabricamos maquinaria agrícola y malla eslabonada en Fómeque, Cundinamarca: bomba ariete, máquinas para malla y de arrastre. Producción propia, precio de fabricante y entrega rápida al campo. Próximamente, manguera de riego. Cotiza por WhatsApp.">
+<meta name="keywords" content="maquinaria agrícola, bomba ariete, máquina malla eslabonada, malla eslabonada, cerramiento, manguera de riego, Fómeque, Cundinamarca, fabricante, agricultura, cercas">
+<meta name="author" content="Industrias Rincón">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#E8590C">
+<link rel="canonical" href="https://industriasrincon.com/">
+<meta name="geo.region" content="CO-CUN">
+<meta name="geo.placename" content="Fómeque, Cundinamarca">
+
+<!-- ===== Open Graph / redes sociales ===== -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Industrias Rincón">
+<meta property="og:title" content="Industrias Rincón | Maquinaria Agrícola y Malla Eslabonada">
+<meta property="og:description" content="Fabricación propia de maquinaria agrícola y malla eslabonada en Fómeque, Cundinamarca. Directo del fabricante al campo.">
+<meta property="og:url" content="https://industriasrincon.com/">
+<meta property="og:image" content="https://industriasrincon.com/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Industrias Rincón | Manguera Agrícola y Malla Eslabonada">
+<meta name="twitter:description" content="Fabricación propia en Fómeque, Cundinamarca. Manguera de riego y malla eslabonada directo del fabricante.">
+
+<!-- ===== Datos estructurados (JSON-LD) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Industrias Rincón",
+  "description": "Fabricación de manguera agrícola de riego y malla eslabonada.",
+  "image": "https://industriasrincon.com/logo.svg",
+  "url": "https://industriasrincon.com/",
+  "telephone": "+573212317971",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fómeque",
+    "addressRegion": "Cundinamarca",
+    "addressCountry": "CO"
+  },
+  "openingHours": "Mo-Sa",
+  "areaServed": ["Cundinamarca", "Bogotá", "Llanos Orientales"]
+}
+</script>
+
+<!-- ===== Google Analytics (GA4) — reemplaza G-XXXXXXXXXX por tu ID real ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #E8590C;
+  --orange-light: rgba(232,89,12,0.08);
+  --orange-mid: rgba(232,89,12,0.15);
+  --orange-glow: rgba(232,89,12,0.25);
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark2: #1A1A1A;
+  --white: #FFFFFF;
+  --gray: #F5F5F3;
+  --gray2: #E8E8E6;
+  --muted: #6B7280;
+  --muted2: #9CA3AF;
+  --text: #1F2937;
+  --border: rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.nav-logo svg { height: 34px; width: auto; display: block; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 0.82; }
+.nav-logo-text b {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800; text-transform: uppercase;
+  font-size: 0.84rem; letter-spacing: 0.06em;
+  color: var(--black);
+}
+@media (max-width: 380px) { .nav-logo-text { display: none; } }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--orange);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--orange); color: white !important;
+  padding: 8px 20px; border-radius: 6px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 0.82rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  text-decoration: none; transition: all 0.2s;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: #D14E0A; transform: translateY(-1px); }
+
+/* Mobile menu */
+.nav-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 32px; position: relative;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px; background: var(--black);
+  position: absolute; left: 5px; transition: all 0.3s;
+}
+.nav-toggle span:nth-child(1) { top: 10px; }
+.nav-toggle span:nth-child(2) { top: 16px; }
+.nav-toggle span:nth-child(3) { top: 22px; }
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 16px; }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 16px; }
+
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 1.25rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column; padding: 2rem; gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-120%); opacity: 0;
+    transition: all 0.3s ease;
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; }
+  .nav-links a { font-size: 1.1rem; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 120px 2rem 80px;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 4px; background: var(--orange);
+}
+.hero::after {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.015) 49.5%, rgba(255,255,255,0.015) 50.5%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, rgba(255,255,255,0.015) 49.5%, rgba(255,255,255,0.015) 50.5%, transparent 50.5%);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; font-weight: 500;
+  color: var(--orange); letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 2px;
+  background: var(--orange);
+}
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 800; line-height: 0.95;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.6s ease 0.4s forwards;
+}
+.hero-title span { color: var(--orange); }
+.hero-desc {
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7; max-width: 520px;
+  margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.6s ease 0.6s forwards;
+}
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.6s ease 0.8s forwards;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--orange); color: white;
+  padding: 14px 32px; border-radius: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #D14E0A; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,89,12,0.25); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: rgba(255,255,255,0.6);
+  padding: 14px 32px; border-radius: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: white; }
+
+.hero-stats {
+  display: flex; gap: 2.5rem;
+  margin-top: 4rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  opacity: 0; animation: fadeUp 0.6s ease 1s forwards;
+}
+.hero-stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem; font-weight: 800;
+  color: var(--orange);
+}
+.hero-stat-label {
+  font-size: 0.7rem; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTION BASE ===== */
+.section {
+  padding: 80px 2rem;
+  max-width: 1200px; margin: 0 auto;
+}
+.section-full { padding: 80px 2rem; }
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; font-weight: 500;
+  color: var(--orange); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-tag::before {
+  content: ''; width: 20px; height: 2px; background: var(--orange);
+}
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800; text-transform: uppercase;
+  color: var(--black); letter-spacing: -0.01em;
+  line-height: 1; margin-bottom: 0.75rem;
+}
+.section-desc {
+  font-size: 0.95rem; color: var(--muted);
+  line-height: 1.8; max-width: 600px;
+}
+
+/* ===== QUIÉNES SOMOS ===== */
+.about-bg { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: start; margin-top: 3rem;
+}
+.about-text {
+  font-size: 1rem; color: var(--text);
+  line-height: 1.9;
+}
+.about-text strong { color: var(--black); font-weight: 600; }
+.about-values { display: flex; flex-direction: column; gap: 1.25rem; }
+.value-card {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--gray);
+  border-radius: 12px;
+  border-left: 3px solid var(--orange);
+  transition: transform 0.2s;
+}
+.value-card:hover { transform: translateX(4px); }
+.value-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--orange-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.value-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  text-transform: uppercase; color: var(--black);
+  margin-bottom: 2px;
+}
+.value-desc {
+  font-size: 0.82rem; color: var(--muted); line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ===== PRODUCTOS ===== */
+.products-bg { background: var(--gray); }
+.products-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  margin-top: 3rem;
+}
+.product-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.product-visual {
+  height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.product-visual.manguera-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.product-visual.malla-bg {
+  background: linear-gradient(135deg, var(--orange) 0%, #D14E0A 100%);
+}
+.product-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.product-visual-icon {
+  font-size: 4rem; opacity: 0.3;
+  position: absolute;
+}
+.product-visual-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.8rem; font-weight: 800;
+  color: white; text-transform: uppercase;
+  letter-spacing: 0.06em;
+  position: relative; z-index: 1;
+}
+.product-badge {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white; padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.product-body { padding: 1.5rem; }
+.product-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem; font-weight: 800;
+  text-transform: uppercase; color: var(--black);
+  margin-bottom: 0.5rem;
+}
+.product-desc {
+  font-size: 0.85rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: 1rem;
+}
+.product-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+.spec-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; font-weight: 500;
+  padding: 4px 10px; border-radius: 6px;
+  background: var(--orange-light);
+  color: var(--orange);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.product-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  color: var(--orange); text-transform: uppercase;
+  letter-spacing: 0.06em; text-decoration: none;
+  transition: gap 0.2s;
+}
+.product-cta:hover { gap: 12px; }
+.product-cta svg { transition: transform 0.2s; }
+.product-cta:hover svg { transform: translateX(2px); }
+
+/* CINTA DIAGONAL "PRÓXIMAMENTE" */
+.product-card.soon { opacity: 0.96; }
+.product-card.soon .product-visual { filter: grayscale(0.2); }
+.ribbon-soon {
+  position: absolute; top: 18px; right: -52px; z-index: 3;
+  background: var(--orange); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem;
+  padding: 7px 60px; transform: rotate(45deg);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25); pointer-events: none;
+}
+.product-cta.disabled {
+  color: var(--muted); cursor: default; pointer-events: none;
+}
+.product-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.product-datasheet {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 6px 12px; border-radius: 6px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.product-datasheet:hover { color: var(--orange); border-color: var(--orange); }
+.product-datasheet svg { width: 13px; height: 13px; }
+
+@media (max-width: 960px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== CONTACTO ===== */
+.contact-bg {
+  background: var(--black); position: relative; overflow: hidden;
+}
+.contact-bg::before {
+  content: '';
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 4px; background: var(--orange);
+}
+.contact-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.contact-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800; text-transform: uppercase;
+  color: var(--white); letter-spacing: -0.01em;
+  line-height: 0.95; margin-bottom: 1rem;
+}
+.contact-title span { color: var(--orange); }
+.contact-desc {
+  font-size: 0.95rem; color: rgba(255,255,255,0.4);
+  line-height: 1.7; margin-bottom: 2rem;
+}
+.contact-items { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.contact-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(232,89,12,0.2);
+}
+.contact-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: var(--orange-mid);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-icon svg { width: 22px; height: 22px; color: var(--orange); }
+.contact-item-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+.contact-item-value {
+  font-size: 0.95rem; color: white; font-weight: 500;
+}
+.contact-right { text-align: center; }
+.wa-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: #25D366; color: white;
+  padding: 18px 40px; border-radius: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+}
+.wa-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+}
+.wa-btn svg { width: 24px; height: 24px; fill: white; }
+.wa-note {
+  font-size: 0.72rem; color: rgba(255,255,255,0.25);
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-right { text-align: left; }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.footer-logo { height: 48px; width: auto; margin-bottom: 1rem; }
+.footer-text {
+  font-size: 0.72rem; color: rgba(255,255,255,0.2);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero { padding: 100px 1.25rem 60px; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .section { padding: 60px 1.25rem; }
+  .section-full { padding: 60px 1.25rem; }
+  .product-visual { height: 160px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo" aria-label="Industrias Rincón — Inicio">
+      <svg viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+        <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+        <rect x="24" y="0" width="16" height="70" fill="#0A0A0A"/>
+        <circle cx="50" cy="22" r="22" fill="#0A0A0A"/>
+        <polygon points="40,38 56,38 84,70 64,70" fill="#0A0A0A"/>
+        <circle cx="52" cy="22" r="10" fill="#FFFFFF"/>
+        <circle cx="24" cy="40" r="7" fill="#FFFFFF"/>
+      </svg>
+      <span class="nav-logo-text"><b>INDUSTRIAS</b><b>RINCÓN</b></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="about.html">Acerca de</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Fómeque, Cundinamarca</div>
+    <h1 class="hero-title">
+      FABRICAMOS<br>LO QUE EL<br><span>CAMPO</span> NECESITA
+    </h1>
+    <p class="hero-desc">
+      Fabricamos <strong>maquinaria y soluciones metálicas</strong> para el campo y la industria, en Fómeque, Cundinamarca.
+      Del fabricante directo a tu cultivo: equipos pensados para rendir en el terreno real, hechos con materiales y
+      procesos que cuidamos en cada detalle, y una entrega que respeta los tiempos de tu trabajo. Y seguimos creciendo:
+      muy pronto, también <strong>manguera agrícola de riego</strong>.
+    </p>
+    <div class="hero-actions">
+      <a href="#productos" class="btn-primary">
+        Ver productos
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="contacto.html" class="btn-secondary">
+        Cotizar ahora
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Líneas de producto</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Fabricación propia</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Oriente</div>
+        <div class="hero-stat-label">Cundinamarca &amp; Llanos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="section-full about-bg" id="nosotros">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="section-tag reveal">La empresa</div>
+    <h2 class="section-title reveal">QUIÉNES<br>SOMOS</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <strong>Industrias Rincón</strong> es una empresa de fabricación industrial ubicada en <strong>Fómeque, Cundinamarca</strong>. Producimos maquinaria agrícola y malla eslabonada, y estamos desarrollando nuestra línea de manguera agrícola de riego. Fabricamos con materiales y procesos que cuidamos en cada detalle, y llegamos tanto al campesino como a distribuidores y ferreterías.
+        <br><br>
+        Nuestro compromiso es simple: <strong>producto de calidad, precio justo, entrega rápida.</strong> Trabajamos con agricultores, agropecuarias y ferreterías del oriente de Cundinamarca, Bogotá y los Llanos orientales.
+      </div>
+      <div class="about-values reveal">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 7v14m18-14v14M6 7h12l-6-6z"/></svg>
+          </div>
+          <div>
+            <div class="value-title">Fabricación propia</div>
+            <div class="value-desc">Controlamos cada etapa del proceso. Sin terceros, sin sobrecostos.</div>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="value-title">Origen local</div>
+            <div class="value-desc">Ubicados en Fómeque. Conocemos el terreno, conocemos al agricultor.</div>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2m7-10a4 4 0 100-8 4 4 0 000 8zm11 10v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <div class="value-title">Trato directo</div>
+            <div class="value-desc">Sin intermediarios. Hablás con el fabricante, punto.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="section-full products-bg" id="productos">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="section-tag reveal">Catálogo</div>
+    <h2 class="section-title reveal">NUESTROS<br>PRODUCTOS</h2>
+    <div class="section-desc reveal">Todo lo que fabricamos está diseñado para durar en las condiciones reales del campo colombiano.</div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-visual manguera-bg">
+          <img class="product-photo" src="fotos/maquinaria.jpg" alt="Maquinaria fabricada por Industrias Rincón">
+          <div class="product-badge">Disponible</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">Maquinaria</h3>
+          <div class="product-desc">
+            Maquinaria fabricada localmente: bombas ariete, máquinas para malla eslabonada y máquinas de arrastre tipo carrucha. Fabricación propia, precio de fabricante directo.
+          </div>
+          <div class="product-specs">
+            <span class="spec-tag">Bomba Ariete</span>
+            <span class="spec-tag">Máq. Malla</span>
+            <span class="spec-tag">Carrucha</span>
+          </div>
+          <div class="product-actions">
+            <a href="maquinaria.html" class="product-cta">
+              Ver productos
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <!-- FICHA TÉCNICA: pon tu PDF en fichas/maquinaria.pdf y descomenta -->
+            <!-- <a href="fichas/maquinaria.pdf" class="product-datasheet" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+              Ficha técnica
+            </a> -->
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-visual malla-bg">
+          <img class="product-photo" src="fotos/malla.jpg" alt="Malla eslabonada Industrias Rincón">
+          <div class="product-badge">Disponible</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">Malla Eslabonada</h3>
+          <div class="product-desc">
+            Malla de alta resistencia para cerramiento de predios, cultivos y corrales. Diferentes calibres y alturas. Fabricación bajo pedido.
+          </div>
+          <div class="product-specs">
+            <span class="spec-tag">Cal. 10</span>
+            <span class="spec-tag">Cal. 12</span>
+            <span class="spec-tag">Cal. 14</span>
+            <span class="spec-tag">1.5m — 2m</span>
+          </div>
+          <div class="product-actions">
+            <a href="malla.html" class="product-cta">
+              Ver productos
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <!-- FICHA TÉCNICA: pon tu PDF en fichas/malla.pdf y descomenta -->
+            <!-- <a href="fichas/malla.pdf" class="product-datasheet" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+              Ficha técnica
+            </a> -->
+          </div>
+        </div>
+      </div>
+      <div class="product-card soon reveal">
+        <div class="ribbon-soon">Próximamente</div>
+        <div class="product-visual manguera-bg">
+          <div class="product-visual-label">Manguera</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">Manguera Agrícola</h3>
+          <div class="product-desc">
+            Manguera de riego y conducción para el campo. Estamos preparando esta línea — muy pronto disponible directo de fábrica.
+          </div>
+          <div class="product-specs">
+            <span class="spec-tag">Riego</span>
+            <span class="spec-tag">Conducción</span>
+            <span class="spec-tag">Varias pulgadas</span>
+          </div>
+          <div class="product-actions">
+            <span class="product-cta disabled">
+              Próximamente
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section-full contact-bg" id="contacto">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="contact-inner">
+      <div>
+        <div class="section-tag" style="color:var(--orange)">Contacto</div>
+        <h2 class="contact-title">HABLEMOS<br><span>DIRECTO</span></h2>
+        <div class="contact-desc">
+          Cotizaciones, pedidos y consultas. Sin formularios, sin espera. Escribinos por WhatsApp y te respondemos hoy.
+        </div>
+        <div class="contact-items">
+          <a class="contact-item" href="https://wa.me/573212317971" target="_blank" rel="noopener">
+            <div class="contact-icon">
+              <svg fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div class="contact-item-value">+57 321 231 7971</div>
+            </div>
+          </a>
+          <a class="contact-item" href="tel:+573023044286">
+            <div class="contact-icon">
+              <svg fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Llámanos</div>
+              <div class="contact-item-value">+57 302 304 4286</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Ubicación</div>
+              <div class="contact-item-value">Fómeque, Cundinamarca</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Atención</div>
+              <div class="contact-item-value">Lunes a Sábado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <a href="https://wa.me/573212317971?text=Hola%2C%20quiero%20cotizar%20productos%20de%20Industrias%20Rincón" class="wa-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L0 24l6.335-1.652A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.875 0-3.656-.5-5.216-1.395l-.375-.222-3.87 1.01 1.032-3.77-.244-.39A9.69 9.69 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <div class="wa-note">Respuesta en menos de 24 horas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <svg class="footer-logo" viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+    <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+    <rect x="24" y="0" width="16" height="70" fill="#FFFFFF"/>
+    <circle cx="50" cy="22" r="22" fill="#FFFFFF"/>
+    <polygon points="40,38 56,38 84,70 64,70" fill="#FFFFFF"/>
+    <circle cx="52" cy="22" r="10" fill="#0A0A0A"/>
+    <circle cx="24" cy="40" r="7" fill="#0A0A0A"/>
+  </svg>
+  <div class="footer-text">© 2026 Industrias Rincón — Fómeque, Cundinamarca, Colombia</div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+});
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    links.classList.remove('open');
+  });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

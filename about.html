@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- ===== SEO ===== -->
+<title>Acerca de Industrias Rincón | Nuestra historia, misión y valores</title>
+<meta name="description" content="Conoce la historia de Industrias Rincón: fábrica de familia en Fómeque, Cundinamarca, de maquinaria agrícola y malla eslabonada, desarrollando su línea de manguera de riego. Nuestra misión, visión y valores.">
+<meta name="keywords" content="Industrias Rincón, historia, misión, valores, fabricante, Fómeque, Cundinamarca, maquinaria agrícola, malla eslabonada, manguera de riego">
+<meta name="author" content="Industrias Rincón">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#E8590C">
+<link rel="canonical" href="https://industriasrincon.com/about.html">
+
+<!-- ===== Open Graph ===== -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Industrias Rincón">
+<meta property="og:title" content="Acerca de Industrias Rincón">
+<meta property="og:description" content="La historia, misión y valores detrás de los fabricantes de maquinaria agrícola y malla eslabonada de Fómeque, Cundinamarca.">
+<meta property="og:url" content="https://industriasrincon.com/about.html">
+<meta property="og:image" content="https://industriasrincon.com/logo.svg">
+
+<!-- ===== Google Analytics (GA4) — reemplaza G-XXXXXXXXXX por tu ID real ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #E8590C;
+  --orange-light: rgba(232,89,12,0.08);
+  --orange-mid: rgba(232,89,12,0.15);
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --gray: #F5F5F3;
+  --muted: #6B7280;
+  --text: #1F2937;
+  --border: rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  background: var(--white); color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.nav-logo svg { height: 34px; width: auto; display: block; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 0.82; }
+.nav-logo-text b {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  text-transform: uppercase; font-size: 0.84rem; letter-spacing: 0.06em; color: var(--black);
+}
+@media (max-width: 380px) { .nav-logo-text { display: none; } }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  text-decoration: none; transition: color 0.2s; position: relative;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-cta {
+  background: var(--orange); color: white !important; padding: 8px 20px; border-radius: 6px;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.82rem;
+  text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; transition: all 0.2s;
+}
+.nav-cta:hover { background: #D14E0A; transform: translateY(-1px); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; position: relative; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--black); position: absolute; left: 5px; transition: all 0.3s; }
+.nav-toggle span:nth-child(1) { top: 10px; }
+.nav-toggle span:nth-child(2) { top: 16px; }
+.nav-toggle span:nth-child(3) { top: 22px; }
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 16px; }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 16px; }
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 1.25rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(20px); flex-direction: column; padding: 2rem; gap: 1.5rem;
+    border-bottom: 1px solid var(--border); transform: translateY(-120%); opacity: 0; transition: all 0.3s ease;
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; }
+  .nav-links a { font-size: 1.1rem; }
+}
+
+/* HERO */
+.page-hero {
+  background: var(--black); padding: 140px 2rem 80px; position: relative; overflow: hidden;
+}
+.page-hero::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: var(--orange); }
+.page-hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 2; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; font-weight: 500; color: var(--orange); letter-spacing: 0.12em;
+  text-transform: uppercase; margin-bottom: 1.25rem;
+}
+.page-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--orange); }
+.page-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800; line-height: 0.98; color: var(--white); text-transform: uppercase;
+  letter-spacing: -0.02em; margin-bottom: 1.25rem;
+}
+.page-title span { color: var(--orange); }
+.page-lead { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 620px; }
+
+/* CONTENT */
+.section { max-width: 820px; margin: 0 auto; padding: 72px 2rem; }
+.section-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500;
+  color: var(--orange); text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px;
+}
+.section-tag::before { content: ''; width: 20px; height: 2px; background: var(--orange); }
+h2.block-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800; text-transform: uppercase; color: var(--black);
+  letter-spacing: -0.01em; line-height: 1; margin-bottom: 1.25rem;
+}
+.prose { font-size: 1rem; color: var(--text); line-height: 1.9; }
+.prose p { margin-bottom: 1.1rem; }
+.prose strong { color: var(--black); font-weight: 600; }
+
+.mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem; }
+.mv-card { padding: 1.75rem; background: var(--gray); border-radius: 14px; border-left: 3px solid var(--orange); }
+.mv-card h3 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 800;
+  text-transform: uppercase; color: var(--black); margin-bottom: 0.6rem;
+}
+.mv-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+@media (max-width: 680px) { .mv-grid { grid-template-columns: 1fr; } }
+
+.values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 0.5rem; }
+.value-card {
+  display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem;
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px; transition: transform 0.2s;
+}
+.value-card:hover { transform: translateY(-3px); }
+.value-icon {
+  width: 44px; height: 44px; flex-shrink: 0; background: var(--orange-light); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.value-card h3 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.98rem; font-weight: 700;
+  text-transform: uppercase; color: var(--black); margin-bottom: 3px;
+}
+.value-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+@media (max-width: 680px) { .values { grid-template-columns: 1fr; } }
+
+.cta-band { background: var(--black); padding: 56px 2rem; text-align: center; position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: var(--orange); }
+.cta-band h2 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800;
+  text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; letter-spacing: -0.01em;
+}
+.wa-btn {
+  display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: white;
+  padding: 16px 36px; border-radius: 12px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+}
+.wa-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.35); }
+.wa-btn svg { width: 22px; height: 22px; fill: white; }
+
+/* FOOTER */
+.footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem 2rem; text-align: center; }
+.footer-logo { height: 48px; width: auto; margin-bottom: 1rem; }
+.footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.2); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Industrias Rincón — Inicio">
+      <svg viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+        <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+        <rect x="24" y="0" width="16" height="70" fill="#0A0A0A"/>
+        <circle cx="50" cy="22" r="22" fill="#0A0A0A"/>
+        <polygon points="40,38 56,38 84,70 64,70" fill="#0A0A0A"/>
+        <circle cx="52" cy="22" r="10" fill="#FFFFFF"/>
+        <circle cx="24" cy="40" r="7" fill="#FFFFFF"/>
+      </svg>
+      <span class="nav-logo-text"><b>INDUSTRIAS</b><b>RINCÓN</b></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#productos">Productos</a>
+      <a href="about.html">Acerca de</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Acerca de nosotros</div>
+    <h1 class="page-title">DEL TALLER<br>AL <span>CAMPO</span></h1>
+    <p class="page-lead">
+      Somos una fábrica de familia en Fómeque, Cundinamarca. Nacimos para hacer una sola cosa bien:
+      producto resistente para quienes trabajan la tierra. Estamos empezando, y queremos crecer con nuestros clientes.
+    </p>
+  </div>
+</header>
+
+<!-- HISTORIA -->
+<section class="section">
+  <div class="section-tag">Nuestra historia</div>
+  <h2 class="block-title">Nacimos en el campo, para el campo</h2>
+  <div class="prose">
+    <p>
+      Somos una fábrica de familia en <strong>Fómeque, Cundinamarca</strong>. Empezamos con una convicción clara:
+      hacer producto resistente para quienes trabajan la tierra. <strong>Industrias Rincón</strong> nace de la idea
+      de la familia Rincón de fabricar con sus propias manos lo que el campo necesita. Hoy producimos maquinaria
+      agrícola y malla eslabonada, y estamos desarrollando nuestra línea de manguera de riego.
+    </p>
+    <p>
+      Somos una empresa de <strong>fabricación propia</strong>. Conocemos cada pieza que sale de nuestro taller
+      porque la hacemos nosotros, y queremos conocer a quien la compra. Esa cercanía es nuestra mayor ventaja:
+      entendemos el terreno, el clima y las necesidades reales de quien produce.
+    </p>
+    <p>
+      Estamos empezando, y vamos a crecer con nuestros clientes: <strong>producto de calidad, precio justo y
+      trato directo con el fabricante</strong>, desde el primer día.
+    </p>
+  </div>
+</section>
+
+<!-- MISIÓN Y VISIÓN -->
+<section class="section" style="padding-top:0">
+  <div class="section-tag">Hacia dónde vamos</div>
+  <h2 class="block-title">Misión y visión</h2>
+  <div class="mv-grid">
+    <div class="mv-card">
+      <h3>Misión</h3>
+      <p>
+        Fabricar equipos y productos duraderos y accesibles para el campo colombiano, entregados a tiempo
+        y con el respaldo directo de quien los fabrica, para que cada cliente produzca más y confíe en
+        nosotros a largo plazo.
+      </p>
+    </div>
+    <div class="mv-card">
+      <h3>Visión</h3>
+      <p>
+        Para el 2030, ser el fabricante de referencia en soluciones agrícolas, de cerramiento y de riego
+        para el oriente de Cundinamarca y los Llanos, reconocidos por nuestra calidad constante, nuestro
+        origen local y una relación de confianza que dura años.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="section" style="padding-top:0">
+  <div class="section-tag">Lo que nos mueve</div>
+  <h2 class="block-title">Nuestros valores</h2>
+  <div class="values">
+    <div class="value-card">
+      <div class="value-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 7v14m18-14v14M6 7h12l-6-6z"/></svg>
+      </div>
+      <div>
+        <h3>Fabricación propia</h3>
+        <p>Controlamos cada etapa del proceso. Sin terceros, sin sobrecostos, sin excusas.</p>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div>
+        <h3>Origen local</h3>
+        <p>Ubicados en Fómeque. Conocemos el terreno y al agricultor porque somos del mismo lugar.</p>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2m7-10a4 4 0 100-8 4 4 0 000 8z"/></svg>
+      </div>
+      <div>
+        <h3>Trato directo</h3>
+        <p>Sin intermediarios. Hablás con el fabricante, resolvés con el fabricante.</p>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8590C" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <div>
+        <h3>Calidad que dura</h3>
+        <p>Fabricamos pensando en las condiciones reales del campo: sol, humedad y uso diario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>¿Listo para cotizar?</h2>
+  <a href="https://wa.me/573212317971?text=Hola%2C%20quiero%20cotizar%20productos%20de%20Industrias%20Rincón" class="wa-btn" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L0 24l6.335-1.652A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.875 0-3.656-.5-5.216-1.395l-.375-.222-3.87 1.01 1.032-3.77-.244-.39A9.69 9.69 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+    Escribir por WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <svg class="footer-logo" viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+    <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+    <rect x="24" y="0" width="16" height="70" fill="#FFFFFF"/>
+    <circle cx="50" cy="22" r="22" fill="#FFFFFF"/>
+    <polygon points="40,38 56,38 84,70 64,70" fill="#FFFFFF"/>
+    <circle cx="52" cy="22" r="10" fill="#0A0A0A"/>
+    <circle cx="24" cy="40" r="7" fill="#0A0A0A"/>
+  </svg>
+  <div class="footer-text">© 2026 Industrias Rincón — Fómeque, Cundinamarca, Colombia</div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+});
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    links.classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>

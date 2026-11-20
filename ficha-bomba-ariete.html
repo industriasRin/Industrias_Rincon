@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Ficha Técnica — Bomba de Ariete Hidráulico | Industrias Rincón</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --naranja:#E8590C; --naranja2:#FF7A2E; --negro:#0A0A0A; --negro2:#161616; --blanco:#FFFFFF;
+    --gris:#6B7280; --grisclaro:#F7F7F5; --borde:#E8E8E4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--negro);background:#EDEDE9;padding:1.5rem 0}
+  .ficha-nav{max-width:880px;margin:0 auto .9rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .ficha-nav a{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:all .2s}
+  .ficha-back{color:var(--negro)}
+  .ficha-back:hover{color:var(--naranja)}
+  .ficha-home{background:var(--naranja);color:#fff;padding:.5rem 1rem;border-radius:8px}
+  .ficha-home:hover{background:#c2440a}
+  @media print{.ficha-nav{display:none}}
+  .hoja{max-width:880px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+
+  /* HERO */
+  .hero{position:relative;background:linear-gradient(135deg,var(--negro) 0%,var(--negro2) 60%,#1f1f1f 100%);color:#fff;padding:2.2rem 2.2rem 2.6rem;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(232,89,12,.35),transparent 70%)}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;margin-bottom:1.8rem}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:42px;height:42px;border-radius:9px;background:var(--naranja);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed';font-weight:900;font-size:1.2rem}
+  .logo-name{font-family:'Barlow Condensed';font-weight:800;font-size:1.15rem;letter-spacing:.02em;text-transform:uppercase}
+  .logo-sub{font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase}
+  .ficha-pill{font-size:.62rem;background:rgba(232,89,12,.18);border:1px solid rgba(232,89,12,.5);color:var(--naranja2);padding:.35rem .7rem;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+
+  .hero-body{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:1.6rem;align-items:center}
+  .hero-eyebrow{font-size:.72rem;color:var(--naranja2);letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:.5rem}
+  .hero h1{font-family:'Barlow Condensed';font-weight:900;font-size:2.5rem;text-transform:uppercase;line-height:.98;margin-bottom:.3rem}
+  .hero h1 span{color:var(--naranja2)}
+  .hero-desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.6;max-width:360px;margin-bottom:1.1rem}
+  .badges{display:flex;flex-wrap:wrap;gap:1.1rem}
+  .badge{display:flex;flex-direction:column;align-items:center;gap:.4rem;width:84px;text-align:center}
+  .badge .ic-circle{width:46px;height:46px;border-radius:50%;background:rgba(232,89,12,.14);border:1.5px solid rgba(255,122,46,.5);display:flex;align-items:center;justify-content:center}
+  .badge .ic-circle svg{width:22px;height:22px;stroke:var(--naranja2)}
+  .badge .lbl{font-size:.62rem;font-weight:700;line-height:1.25;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.02em}
+  .hero-calc{display:inline-flex;align-items:center;gap:7px;margin-top:1.2rem;background:var(--naranja);color:#fff;font-family:'Barlow Condensed';font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;padding:.7rem 1.3rem;border-radius:10px;text-decoration:none;transition:all .2s}
+  .hero-calc:hover{background:#c2440a;transform:translateY(-1px)}
+
+  .sec-icon{width:34px;height:34px;border-radius:9px;background:rgba(232,89,12,.12);border:1.5px solid rgba(232,89,12,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .sec-icon svg{width:17px;height:17px;stroke:var(--naranja)}
+
+  .foto-box{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(145deg,#232323,#111);border:2px dashed rgba(255,255,255,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;position:relative;overflow:hidden}
+  .foto-box.con-foto{border-style:solid;border-color:rgba(255,122,46,.4)}
+  .foto-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .foto-box .ic{font-size:2.2rem;opacity:.5}
+  .foto-box .lbl{font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;text-align:center;padding:0 1rem}
+  .foto-tag{position:absolute;top:10px;right:10px;background:var(--naranja);color:#fff;font-size:.6rem;font-weight:800;padding:.3rem .55rem;border-radius:6px;text-transform:uppercase;letter-spacing:.04em;z-index:2}
+
+  .nota-placeholder{margin:1.2rem 2rem 0;background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:.75rem 1rem;font-size:.74rem;color:#92400E}
+
+  /* POR QUE */
+  .porque{padding:1.8rem 2.2rem 0}
+  .porque h3{font-family:'Barlow Condensed';font-size:1.1rem;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+  .porque h3::before{content:'';width:4px;height:20px;background:var(--naranja);border-radius:2px}
+  .porque-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .porque-item{display:flex;gap:.7rem;align-items:flex-start;background:var(--grisclaro);border-radius:10px;padding:.7rem .85rem}
+  .porque-item .ic{width:26px;height:26px;border-radius:7px;background:var(--negro);color:var(--naranja2);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+  .porque-item p{font-size:.78rem;line-height:1.4;font-weight:500}
+
+  /* SPECS */
+  .specs-wrap{padding:1.8rem 2.2rem 0;display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem}
+  .card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:1.1rem 1.2rem}
+  .card h3{font-family:'Barlow Condensed';font-size:1rem;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:7px;color:var(--negro)}
+  .card h3::before{content:'';width:4px;height:17px;background:var(--naranja);border-radius:2px}
+  table{width:100%;border-collapse:collapse;font-size:.79rem}
+  table tr:nth-child(even){background:var(--grisclaro)}
+  table td{padding:.5rem .55rem}
+  table td:first-child{color:var(--gris);font-weight:500;border-radius:6px 0 0 6px}
+  table td:last-child{text-align:right;font-weight:700;border-radius:0 6px 6px 0}
+
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem}
+  .stat{background:linear-gradient(135deg,var(--negro),var(--negro2));border-radius:12px;padding:.9rem;text-align:center;color:#fff}
+  .stat .num{font-family:'Barlow Condensed';font-weight:900;font-size:1.6rem;color:var(--naranja2);line-height:1}
+  .stat .lbl{font-size:.6rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.04em;margin-top:.2rem}
+
+  .microtxt{padding:.9rem 2.2rem 0;font-size:.7rem;color:var(--gris);font-style:italic}
+
+  /* INCLUYE */
+  .incluye{padding:1.8rem 2.2rem 0}
+  .incluye h3{font-family:'Barlow Condensed';font-size:1.1rem;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:8px}
+  .incluye h3::before{content:'';width:4px;height:20px;background:var(--naranja);border-radius:2px}
+  .incluye-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .incluye-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;padding:.5rem .3rem;border-bottom:1px solid var(--borde)}
+  .incluye-item .check{width:20px;height:20px;border-radius:50%;background:var(--naranja);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0}
+
+  /* CONFIANZA */
+  .confianza{display:flex;flex-wrap:wrap;margin:1.8rem 2.2rem 0;border-top:2px solid var(--negro);border-bottom:2px solid var(--negro)}
+  .confianza div{flex:1 1 0;min-width:150px;padding:1rem .5rem;text-align:center;border-right:1px solid var(--borde)}
+  .confianza div:last-child{border-right:none}
+  .confianza .ic{font-size:1.2rem;color:var(--naranja);margin-bottom:.3rem}
+  .confianza .t{font-family:'Barlow Condensed';font-weight:700;font-size:.82rem;text-transform:uppercase}
+  .confianza .d{font-size:.68rem;color:var(--gris);margin-top:.15rem}
+
+  /* CTA FINAL */
+  .cta-final{margin:1.8rem 2.2rem 2.2rem;background:linear-gradient(120deg,var(--naranja),#c2440a);border-radius:16px;padding:1.6rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:#fff}
+  .cta-final h3{font-family:'Barlow Condensed';font-weight:900;font-size:1.3rem;text-transform:uppercase;line-height:1.05}
+  .cta-final p{font-size:.78rem;color:rgba(255,255,255,.85);margin-top:.3rem}
+  .cta-btn{background:#fff;color:var(--negro);font-weight:800;font-size:.82rem;padding:.7rem 1.3rem;border-radius:9px;white-space:nowrap;text-decoration:none}
+  .cta-acts{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .cta-btn2{background:var(--negro);color:#fff}
+
+  .footer{background:var(--negro);color:#fff;padding:1rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;flex-wrap:wrap;gap:.4rem}
+  .footer .lema{color:var(--naranja2);font-style:italic}
+
+  @media print{body{background:#fff;padding:0}.hoja{box-shadow:none;border-radius:0}.nota-placeholder{display:none}}
+  @media(max-width:620px){.hero-body{grid-template-columns:1fr}.specs-wrap{grid-template-columns:1fr}.porque-grid,.incluye-grid{grid-template-columns:1fr}.cta-final{flex-direction:column;text-align:center}}
+
+  .hero-diagram{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(145deg,#1d1d1d,#0f0f0f);border:2px solid rgba(255,122,46,.4);position:relative;overflow:hidden;padding:.5rem}
+  .hero-diagram svg{width:100%;height:100%;display:block}
+  .nota-placeholder ul{margin:.4rem 0 0 1.1rem}
+  .nota-placeholder li{margin:.15rem 0}
+  .tbl-wrap{overflow-x:auto}
+  table.q{font-size:.74rem;text-align:center;min-width:520px}
+  table.q th{background:var(--negro);color:#fff;padding:.5rem .3rem;font-family:'Barlow Condensed';font-size:.85rem;letter-spacing:.03em;font-weight:700}
+  table.q th.corner{background:var(--naranja);font-size:.7rem;line-height:1.15}
+  table.q td{padding:.42rem .2rem;border:1px solid #fff;font-weight:700;color:var(--negro);border-radius:0}
+  table.q td.ho{background:var(--negro);color:var(--naranja2);font-family:'Barlow Condensed';font-size:.9rem}
+  table.q td.vacio{background:var(--grisclaro);color:#c7c7c2;font-weight:500}
+  table.q tr:nth-child(even){background:none}
+  .q-note{font-size:.7rem;color:var(--gris);margin-top:.7rem;line-height:1.5}
+  .ej{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.9rem}
+  .ej div{background:var(--grisclaro);border-left:4px solid var(--naranja);border-radius:10px;padding:.7rem .9rem;font-size:.78rem;line-height:1.45}
+  .ej b{font-family:'Barlow Condensed';font-size:1.25rem;color:var(--naranja);display:block;line-height:1.1}
+  .fullcard{padding:1.8rem 2.2rem 0}
+  @media(max-width:620px){.ej{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ficha-nav">
+  <a class="ficha-back" href="maquinaria.html">← Volver a Maquinaria</a>
+  <a class="ficha-home" href="index.html">Inicio</a>
+</div>
+<div class="hoja">
+
+  <div class="hero">
+    <div class="hero-top">
+      <div class="logo">
+        <div class="logo-mark">IR</div>
+        <div><div class="logo-name">Industrias Rincón</div><div class="logo-sub">Fabricación industrial</div></div>
+      </div>
+      <div class="ficha-pill">Ficha técnica M-2026-ARIETE</div>
+    </div>
+    <div class="hero-body">
+      <div>
+        <div class="hero-eyebrow">Línea de maquinaria</div>
+        <h1>Bomba de<br><span>Ariete Hidráulico</span></h1>
+        <p class="hero-desc">Sube el agua de tu quebrada o río hasta la finca usando solo la fuerza del propio caudal: sin electricidad, sin combustible y sin costo de operación.</p>
+        <div class="badges">
+          <div class="badge"><div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/><path d="M3 3l18 18"/></svg></div><div class="lbl">Sin electricidad</div></div>
+          <div class="badge"><div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="lbl">Opera día y noche</div></div>
+          <div class="badge"><div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="1.5"/><path d="M6 7v4M10 7v3M14 7v4M18 7v3"/></svg></div><div class="lbl">Diseño a la medida</div></div>
+        </div>
+        <a class="hero-calc" href="calculadora-bomba-ariete.html">⚙ Calculadora de diseño →</a>
+      </div>
+      <div class="foto-box con-foto">
+        <div class="foto-tag">Fabricación IR</div>
+        <img src="fotos/bomba-ariete.jpg" alt="Bomba de ariete hidráulico fabricada por Industrias Rincón">
+      </div>
+    </div>
+  </div>
+
+  <div class="fullcard">
+    <div class="card">
+      <h3><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg></span> Cómo se instala</h3>
+      <div class="hero-diagram">
+<svg viewBox="0 0 520 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema de instalación de la bomba de ariete">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#9CA3AF"/></marker>
+  </defs>
+  <g font-family="Inter, sans-serif" fill="#E5E7EB">
+    <rect x="18" y="62" width="112" height="70" rx="7" fill="rgba(96,165,250,.22)" stroke="#60A5FA" stroke-width="2"/>
+    <path d="M24 84 q10 -6 20 0 t20 0 t20 0 t20 0" fill="none" stroke="#60A5FA" stroke-width="2"/>
+    <text x="74" y="104" font-size="14" font-weight="700" text-anchor="middle">FUENTE</text>
+    <text x="74" y="121" font-size="12.5" text-anchor="middle" fill="#9CA3AF">quebrada / río</text>
+
+    <line x1="12" y1="300" x2="505" y2="300" stroke="#4B5563" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+    <line x1="44" y1="134" x2="44" y2="298" stroke="#9CA3AF" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+    <text x="54" y="205" font-size="14" font-weight="700" fill="#FF7A2E">h = 1 a 4 m</text>
+    <text x="54" y="220" font-size="12.5" fill="#9CA3AF">caída de agua</text>
+
+    <polyline points="128,118 215,296 300,296" fill="none" stroke="#9CA3AF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="200" y="186" font-size="13" font-weight="600">Tubería de alimentación</text>
+    <text x="200" y="201" font-size="12.5" fill="#9CA3AF">acero galv. 1¼″ × 6 m</text>
+
+    <rect x="298" y="274" width="48" height="24" rx="4" fill="#E8590C"/>
+    <rect x="309" y="196" width="26" height="80" rx="12" fill="rgba(232,89,12,.30)" stroke="#FF7A2E" stroke-width="2"/>
+    <text x="300" y="236" font-size="13" font-weight="600" text-anchor="end">Cámara</text>
+    <text x="300" y="250" font-size="13" font-weight="600" text-anchor="end">de aire</text>
+    <text x="322" y="325" font-size="14" font-weight="700" text-anchor="middle" fill="#FF7A2E">ARIETE</text>
+    <path d="M366 300 v14 M376 300 v10 M386 300 v14" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="376" y="330" font-size="12.5" text-anchor="middle" fill="#9CA3AF">desagüe</text>
+
+    <path d="M335 240 C 400 240, 385 112, 432 102" fill="none" stroke="#FF7A2E" stroke-width="4.5" stroke-linecap="round"/>
+    <text x="262" y="128" font-size="13" font-weight="600">Manguera de</text>
+    <text x="262" y="142" font-size="13" font-weight="600">conducción</text>
+    <path d="M300 134 L 372 150" stroke="#4B5563" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <rect x="424" y="40" width="64" height="62" rx="6" fill="rgba(96,165,250,.22)" stroke="#60A5FA" stroke-width="2"/>
+    <text x="456" y="66" font-size="13" font-weight="700" text-anchor="middle">TANQUE</text>
+    <text x="456" y="81" font-size="12.5" text-anchor="middle" fill="#9CA3AF">de la finca</text>
+    <line x1="504" y1="102" x2="504" y2="298" stroke="#9CA3AF" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+    <text transform="translate(496 200) rotate(-90)" font-size="14" font-weight="700" fill="#FF7A2E" text-anchor="middle">Ho hasta 100 m</text>
+    <text x="260" y="372" font-size="12.5" fill="#6B7280" text-anchor="middle">Esquema ilustrativo — sin escala</text>
+  </g>
+</svg>
+</div>
+    </div>
+  </div>
+
+  <div class="porque">
+    <h3>¿Por qué elegirla?</h3>
+    <div class="porque-grid">
+      <div class="porque-item"><div class="ic">✓</div><p>No usa electricidad ni combustible: trabaja con la energía del propio caudal</p></div>
+      <div class="porque-item"><div class="ic">✓</div><p>Funciona de forma automática, día y noche, sin operario</p></div>
+      <div class="porque-item"><div class="ic">✓</div><p>Cero costo de operación y mantenimiento sencillo</p></div>
+      <div class="porque-item"><div class="ic">✓</div><p>Lleva el agua hasta 100 m de altura y 1.000 m de distancia</p></div>
+      <div class="porque-item"><div class="ic">✓</div><p>Diseñada a la medida de tu finca con la calculadora IR</p></div>
+      <div class="porque-item"><div class="ic">✓</div><p>Fabricación nacional — Industrias Rincón es el fabricante directo</p></div>
+    </div>
+  </div>
+
+  <div class="specs-wrap">
+    <div class="card">
+      <h3><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span> Especificaciones técnicas</h3>
+      <table>
+        <tr><td>Principio de operación</td><td>Golpe de ariete</td></tr>
+        <tr><td>Energía externa</td><td>Ninguna</td></tr>
+        <tr><td>Caída de agua (h)</td><td>1 a 4 m</td></tr>
+        <tr><td>Altura de bombeo (Ho)</td><td>Hasta 100 m</td></tr>
+        <tr><td>Longitud de bombeo</td><td>Hasta 1.000 m</td></tr>
+        <tr><td>Caudal mínimo de la fuente</td><td>40 L/min</td></tr>
+        <tr><td>Tubería de alimentación</td><td>Acero galv. 1¼″ × 6 m</td></tr>
+        <tr><td>Manguera de conducción</td><td>½″ alta presión</td></tr>
+        <tr><td>Entrega máxima</td><td>Hasta 12.096 L/día</td></tr>
+        <tr><td>Pérdidas por conducción</td><td>≈ 15 % cada 100 m</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="card">
+        <h3><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span> Para instalarla</h3>
+        <table>
+          <tr><td>Fuente</td><td>Permanente</td></tr>
+          <tr><td>Toma de agua</td><td>Bajo la superficie, con filtro</td></tr>
+          <tr><td>Tubería</td><td>Casi horizontal (máx. 10°)</td></tr>
+          <tr><td>Desagüe</td><td>Libre, para el agua sobrante</td></tr>
+          <tr><td>Instalación</td><td>2 personas</td></tr>
+        </table>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">12.096</div><div class="lbl">L/día · a 10 m de altura</div></div>
+        <div class="stat"><div class="num">1.296</div><div class="lbl">L/día · a 100 m de altura</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="microtxt">* Valores máximos de la tabla, con 4 m de caída. Con menos caída entrega menos; el caudal real depende de tu caída y de la altura a la que subas el agua.</p>
+
+  <div class="fullcard">
+    <div class="card">
+      <h3><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 7h7v7"/></svg></span> ¿Cuánta agua te entrega? (litros por día)</h3>
+      <div class="tbl-wrap"><table class="q"><tr><th class="corner">ALTURA DE<br>BOMBEO ↓<br>CAÍDA →</th><th>1.0 m</th><th>1.5 m</th><th>2.0 m</th><th>2.5 m</th><th>3.0 m</th><th>3.5 m</th><th>4.0 m</th></tr><tr><td class="ho">10 m</td><td style="background:rgba(232,89,12,0.36)">2.419</td><td style="background:rgba(232,89,12,0.44)">4.060</td><td style="background:rgba(232,89,12,0.50)">5.357</td><td style="background:rgba(232,89,12,0.54)">6.566</td><td style="background:rgba(232,89,12,0.61)">8.467</td><td style="background:rgba(232,89,12,0.65)">9.676</td><td style="background:rgba(232,89,12,0.72)">12.096</td></tr><tr><td class="ho">15 m</td><td style="background:rgba(232,89,12,0.33)">1.987</td><td style="background:rgba(232,89,12,0.37)">2.678</td><td style="background:rgba(232,89,12,0.43)">3.802</td><td style="background:rgba(232,89,12,0.48)">4.925</td><td style="background:rgba(232,89,12,0.53)">6.134</td><td style="background:rgba(232,89,12,0.59)">7.776</td><td style="background:rgba(232,89,12,0.63)">9.245</td></tr><tr><td class="ho">20 m</td><td style="background:rgba(232,89,12,0.31)">1.642</td><td style="background:rgba(232,89,12,0.34)">2.085</td><td style="background:rgba(232,89,12,0.39)">3.024</td><td style="background:rgba(232,89,12,0.43)">3.888</td><td style="background:rgba(232,89,12,0.49)">5.184</td><td style="background:rgba(232,89,12,0.52)">5.875</td><td style="background:rgba(232,89,12,0.57)">7.258</td></tr><tr><td class="ho">25 m</td><td style="background:rgba(232,89,12,0.27)">1.123</td><td style="background:rgba(232,89,12,0.31)">1.729</td><td style="background:rgba(232,89,12,0.35)">2.333</td><td style="background:rgba(232,89,12,0.40)">3.283</td><td style="background:rgba(232,89,12,0.44)">4.147</td><td style="background:rgba(232,89,12,0.49)">5.141</td><td style="background:rgba(232,89,12,0.52)">5.875</td></tr><tr><td class="ho">30 m</td><td style="background:rgba(232,89,12,0.23)">734</td><td style="background:rgba(232,89,12,0.27)">1.210</td><td style="background:rgba(232,89,12,0.33)">1.987</td><td style="background:rgba(232,89,12,0.38)">2.808</td><td style="background:rgba(232,89,12,0.41)">3.456</td><td style="background:rgba(232,89,12,0.44)">4.060</td><td style="background:rgba(232,89,12,0.47)">4.838</td></tr><tr><td class="ho">40 m</td><td style="background:rgba(232,89,12,0.20)">475</td><td style="background:rgba(232,89,12,0.25)">950</td><td style="background:rgba(232,89,12,0.30)">1.541</td><td style="background:rgba(232,89,12,0.34)">2.160</td><td style="background:rgba(232,89,12,0.37)">2.592</td><td style="background:rgba(232,89,12,0.41)">3.370</td><td style="background:rgba(232,89,12,0.42)">3.715</td></tr><tr><td class="ho">50 m</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.22)">648</td><td style="background:rgba(232,89,12,0.28)">1.282</td><td style="background:rgba(232,89,12,0.32)">1.814</td><td style="background:rgba(232,89,12,0.34)">2.074</td><td style="background:rgba(232,89,12,0.36)">2.506</td><td style="background:rgba(232,89,12,0.38)">2.851</td></tr><tr><td class="ho">60 m</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.21)">518</td><td style="background:rgba(232,89,12,0.25)">907</td><td style="background:rgba(232,89,12,0.28)">1.296</td><td style="background:rgba(232,89,12,0.31)">1.728</td><td style="background:rgba(232,89,12,0.34)">2.074</td><td style="background:rgba(232,89,12,0.36)">2.506</td></tr><tr><td class="ho">70 m</td><td class="vacio">—</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.24)">778</td><td style="background:rgba(232,89,12,0.26)">1.037</td><td style="background:rgba(232,89,12,0.28)">1.296</td><td style="background:rgba(232,89,12,0.31)">1.642</td><td style="background:rgba(232,89,12,0.32)">1.814</td></tr><tr><td class="ho">80 m</td><td class="vacio">—</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.22)">634</td><td style="background:rgba(232,89,12,0.25)">864</td><td style="background:rgba(232,89,12,0.27)">1.123</td><td style="background:rgba(232,89,12,0.28)">1.334</td><td style="background:rgba(232,89,12,0.30)">1.555</td></tr><tr><td class="ho">90 m</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.23)">691</td><td style="background:rgba(232,89,12,0.26)">994</td><td style="background:rgba(232,89,12,0.27)">1.209</td><td style="background:rgba(232,89,12,0.29)">1.382</td></tr><tr><td class="ho">100 m</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td><td style="background:rgba(232,89,12,0.24)">800</td><td style="background:rgba(232,89,12,0.26)">1.037</td><td style="background:rgba(232,89,12,0.28)">1.296</td></tr></table></div>
+      <div class="ej">
+        <div><b>1.987 L/día</b>Con 2 m de caída que suben el agua a 30 m de altura: cerca de 2 m³ al día, unos 1,4 L por minuto.</div>
+        <div><b>5.184 L/día</b>Con 3 m de caída que suben el agua a 20 m de altura: suficiente para un hato pequeño o un riego por goteo.</div>
+      </div>
+      <p class="q-note">Cómo leerla: busca tu caída de agua en las columnas y la altura a la que quieres subir el agua en las filas; el cruce es lo que entrega. Los espacios vacíos (—) son combinaciones en las que la bomba no alcanza. A estos valores réstales cerca del 15 % por cada 100 m de manguera. Valores de referencia del ariete de alta cabeza del Centro Las Gaviotas (Colombia); el rendimiento real depende de la instalación.</p>
+    </div>
+  </div>
+
+  <div class="incluye">
+    <h3><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/><path d="M22 10v6"/></svg></span> ¿Qué incluye?</h3>
+    <div class="incluye-grid">
+      <div class="incluye-item"><div class="check">✓</div>Bomba de ariete armada</div>
+      <div class="incluye-item"><div class="check">✓</div>Cámara de aire y válvulas</div>
+      <div class="incluye-item"><div class="check">✓</div>Diseño a la medida con la calculadora IR</div>
+      <div class="incluye-item"><div class="check">✓</div>Asesoría técnica gratuita</div>
+      <div class="incluye-item"><div class="check">✓</div>Fabricación nacional directa</div>
+      <div class="incluye-item"><div class="check">✓</div>Repuestos disponibles</div>
+    </div>
+  </div>
+
+  <div class="confianza">
+    <div><div class="ic">🛠</div><div class="t">Mantenimiento</div><div class="d">Cambio de empaque cada 6 meses</div></div>
+    <div><div class="ic">📐</div><div class="t">Diseño</div><div class="d">A la medida de tu finca</div></div>
+    <div><div class="ic">💧</div><div class="t">Asesoría</div><div class="d">Técnica y gratuita</div></div>
+    <div><div class="ic">🇨🇴</div><div class="t">Fabricación</div><div class="d">Nacional, fabricante directo</div></div>
+  </div>
+
+  <div class="cta-final">
+    <div>
+      <h3>¿Quieres subir agua a tu finca?</h3>
+      <p>Cuéntanos tu caída, tu caudal y a qué altura quieres llevarla: te diseñamos la bomba.</p>
+    </div>
+    <div class="cta-acts">
+      <a class="cta-btn cta-btn2" href="calculadora-bomba-ariete.html">⚙ Calculadora de diseño →</a>
+      <a class="cta-btn" href="https://wa.me/573212317971?text=Hola%2C%20quiero%20que%20me%20dise%C3%B1en%20una%20bomba%20de%20ariete.%20Mis%20datos%3A%20caudal%20de%20la%20fuente%20___%20L/min%2C%20ca%C3%ADda%20de%20agua%20___%20m%2C%20altura%20a%20la%20que%20quiero%20subir%20el%20agua%20___%20m." target="_blank">Diseñar mi bomba →</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>📍 Fómeque, Cundinamarca &nbsp;·&nbsp; 📱 WhatsApp 321 231 7971 &nbsp;·&nbsp; 302 304 4286</div>
+    <div class="lema">Calidad, precisión y rendimiento para hacer crecer tu negocio.</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+  <rect width="90" height="70" fill="#FFFFFF"/>
+  <rect x="8" y="8" width="20" height="54" fill="#E8590C"/>
+  <rect x="28" y="8" width="13" height="54" fill="#0A0A0A"/>
+  <circle cx="54" cy="26" r="18" fill="#0A0A0A"/>
+  <polygon points="45,40 58,40 82,66 65,66" fill="#0A0A0A"/>
+  <circle cx="56" cy="26" r="8" fill="#FFFFFF"/>
+  <circle cx="28" cy="40" r="6" fill="#FFFFFF"/>
+</svg>

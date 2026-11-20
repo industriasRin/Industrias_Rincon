@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>¡Gracias! | Industrias Rincón</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#E8590C">
+
+<!-- ===== Google Analytics (GA4) — reemplaza G-XXXXXXXXXX por tu ID real ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  // Evento de conversión: formulario enviado
+  gtag('event', 'generate_lead', { 'event_category': 'contacto', 'event_label': 'formulario_contacto' });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0A0A0A; color: #fff; min-height: 100vh;
+  font-family: 'Inter', -apple-system, sans-serif;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
+  position: relative; overflow: hidden;
+}
+body::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: #E8590C; }
+.box { max-width: 480px; position: relative; z-index: 1; }
+.check {
+  width: 80px; height: 80px; border-radius: 50%; background: rgba(37,211,102,0.15);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;
+}
+.check svg { width: 40px; height: 40px; stroke: #25D366; }
+h1 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 2.6rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 1rem; line-height: 1;
+}
+h1 span { color: #E8590C; }
+p { color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; background: #E8590C; color: white;
+  padding: 14px 32px; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  text-decoration: none; transition: all 0.2s;
+}
+.btn:hover { background: #D14E0A; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="check">
+      <svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h1>¡Gracias por<br><span>escribirnos!</span></h1>
+    <p>Recibimos tus datos correctamente. Nuestro equipo de Industrias Rincón te contactará muy pronto para asesorarte.</p>
+    <a href="index.html" class="btn">Volver al inicio</a>
+  </div>
+</body>
+</html>

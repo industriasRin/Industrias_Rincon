@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 100" role="img" aria-label="Industrias Rincón">
+  <!-- Marca IR -->
+  <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+  <rect x="24" y="0" width="16" height="70" fill="#0A0A0A"/>
+  <circle cx="50" cy="22" r="22" fill="#0A0A0A"/>
+  <polygon points="40,38 56,38 84,70 64,70" fill="#0A0A0A"/>
+  <circle cx="52" cy="22" r="10" fill="#FFFFFF"/>
+  <circle cx="24" cy="40" r="7" fill="#FFFFFF"/>
+  <!-- Texto -->
+  <text x="0" y="86" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="15" letter-spacing="1" fill="#0A0A0A">INDUSTRIAS</text>
+  <text x="0" y="100" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="15" letter-spacing="1" fill="#0A0A0A">RINCÓN</text>
+</svg>

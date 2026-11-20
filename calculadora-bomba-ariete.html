@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Calculadora Bomba de Ariete — Industrias Rincón</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #E8590C; --orange-d: #C24A09; --orange-l: rgba(232,89,12,0.08); --orange-m: rgba(232,89,12,0.15);
+  --black: #0A0A0A; --dark: #141414; --dark2: #1E1E1E;
+  --white: #FFFFFF; --gray: #F5F5F3; --gray2: #ECECEA;
+  --muted: #6B7280; --muted2: #9CA3AF;
+  --border: #E2E2DF; --text: #1A1A1A;
+  --green: #16A34A; --green-l: #DCFCE7;
+  --amber: #D97706; --amber-l: #FEF3C7;
+  --red: #DC2626; --red-l: #FEF2F2;
+  --blue: #2563EB; --blue-l: #EFF6FF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { background: var(--gray); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; padding-bottom: 3rem; }
+
+/* HERO */
+.hero { background: var(--black); padding: 2.5rem 1.5rem 2rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: var(--orange); }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.015) 49.5%, rgba(255,255,255,0.015) 50.5%, transparent 50.5%), linear-gradient(0deg, transparent 49.5%, rgba(255,255,255,0.015) 49.5%, rgba(255,255,255,0.015) 50.5%, transparent 50.5%); background-size: 60px 60px; pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.hero-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
+.hero-logo { width: 38px; height: 38px; }
+.hero-brand-txt { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 500; color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.hero-eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--orange); }
+.hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: white; line-height: 0.98; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.hero-title span { color: var(--orange); }
+.hero-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.65; font-weight: 300; max-width: 520px; }
+.hero-line { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 1rem; letter-spacing: 0.06em; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* SECTION */
+.section-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--orange); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; padding-top: 2rem; display: flex; align-items: center; gap: 8px; }
+.section-tag::before { content: ''; width: 16px; height: 2px; background: var(--orange); }
+.section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--black); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.section-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+
+/* INPUT CARD */
+.input-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem; }
+.field { margin-bottom: 1.1rem; }
+.field:last-child { margin-bottom: 0; }
+.field-label { display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--black); margin-bottom: 0.5rem; }
+.field-num { width: 22px; height: 22px; border-radius: 6px; background: var(--orange-l); color: var(--orange); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; flex-shrink: 0; }
+.field-hint { font-size: 0.7rem; color: var(--muted2); font-weight: 400; font-family: 'Inter', sans-serif; text-transform: none; letter-spacing: 0; }
+.input-row { display: flex; gap: 8px; align-items: stretch; }
+.input-box { flex: 1; position: relative; }
+input[type="number"] { width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 500; color: var(--black); background: var(--gray); transition: all 0.15s; }
+input[type="number"]:focus { outline: none; border-color: var(--orange); background: var(--white); box-shadow: 0 0 0 3px var(--orange-l); }
+.unit-tag { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted2); pointer-events: none; font-weight: 500; }
+.seg { display: flex; gap: 6px; flex-wrap: wrap; }
+.seg-btn { flex: 1; min-width: 70px; padding: 10px 8px; border: 1.5px solid var(--border); border-radius: 10px; background: var(--gray); font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+.seg-btn:hover { border-color: var(--muted2); }
+.seg-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+.btn-generate { width: 100%; margin-top: 1.25rem; padding: 16px; background: var(--orange); color: white; border: none; border-radius: 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-generate:hover { background: var(--orange-d); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(232,89,12,0.25); }
+.btn-generate:active { transform: translateY(0); }
+
+/* RESULTS */
+#results { display: none; }
+#results.show { display: block; animation: fadeUp 0.4s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+.alert { border-radius: 12px; padding: 13px 15px; margin-bottom: 1rem; font-size: 0.78rem; line-height: 1.55; display: flex; gap: 10px; align-items: flex-start; }
+.alert-icon { flex-shrink: 0; font-size: 1rem; }
+.alert.warn { background: var(--amber-l); border: 1px solid #FDE68A; color: #92400E; }
+.alert.info { background: var(--blue-l); border: 1px solid #BFDBFE; color: #1E40AF; }
+
+/* EXEC SUMMARY */
+.exec { background: var(--black); border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+.exec::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--orange); }
+.exec-label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: var(--orange); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+.exec-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; color: white; text-transform: uppercase; margin-bottom: 0.75rem; }
+.exec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.exec-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; }
+.exec-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--orange); line-height: 1; }
+.exec-stat-label { font-size: 0.62rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+/* DATA TABLE */
+.data-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.data-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; text-transform: uppercase; color: var(--black); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 8px; }
+.data-card-title .dot { width: 8px; height: 8px; border-radius: 2px; background: var(--orange); }
+.drow { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--gray2); }
+.drow:last-child { border-bottom: none; }
+.drow-label { font-size: 0.8rem; color: var(--muted); flex: 1; }
+.drow-val { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600; color: var(--black); text-align: right; }
+.drow-val span { font-size: 0.68rem; color: var(--muted2); font-weight: 400; }
+
+/* MATERIALS TABLE */
+.mat-table { width: 100%; border-collapse: collapse; font-size: 0.74rem; }
+.mat-table th { background: var(--black); color: white; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.72rem; padding: 8px 9px; text-align: left; }
+.mat-table th:first-child { border-radius: 8px 0 0 0; }
+.mat-table th:last-child { border-radius: 0 8px 0 0; }
+.mat-table td { padding: 8px 9px; border-bottom: 1px solid var(--gray2); color: var(--text); }
+.mat-table td:first-child { font-weight: 500; }
+.mat-table tr:last-child td { border-bottom: none; }
+.mat-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
+
+/* PLANO */
+.plano-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem; margin-bottom: 1rem; }
+.plano-tabs { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 1rem; scrollbar-width: none; padding-bottom: 2px; }
+.plano-tabs::-webkit-scrollbar { display: none; }
+.plano-tab { flex-shrink: 0; padding: 7px 13px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.plano-tab.active { background: var(--orange-l); border-color: var(--orange); color: var(--orange); }
+.plano-view { background: var(--gray); border-radius: 12px; padding: 1rem; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+.plano-view svg { max-width: 100%; height: auto; }
+.plano-cota { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: var(--orange); }
+.plano-cota-line { stroke: var(--orange); stroke-width: 0.5; }
+.plano-part { fill: none; stroke: var(--black); stroke-width: 1.5; }
+.plano-part-fill { fill: var(--gray2); stroke: var(--black); stroke-width: 1.5; }
+.plano-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; fill: var(--black); }
+.plano-water { fill: var(--blue); opacity: 0.25; }
+.plano-note { font-size: 0.7rem; color: var(--muted2); margin-top: 0.75rem; line-height: 1.5; font-style: italic; }
+
+/* RECS */
+.rec-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.rec-item { display: flex; gap: 10px; padding: 8px 0; align-items: flex-start; }
+.rec-item:not(:last-child) { border-bottom: 1px solid var(--gray2); }
+.rec-check { color: var(--orange); flex-shrink: 0; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; margin-top: 1px; }
+.rec-txt { font-size: 0.8rem; color: var(--text); line-height: 1.55; }
+.rec-txt strong { color: var(--black); font-weight: 600; }
+
+/* COST */
+.cost-card { background: linear-gradient(135deg, var(--orange) 0%, var(--orange-d) 100%); border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem; color: white; }
+.cost-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8; margin-bottom: 0.4rem; }
+.cost-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.cost-sub { font-size: 0.72rem; opacity: 0.85; margin-top: 0.5rem; line-height: 1.5; }
+
+.disclaimer { background: var(--white); border: 1px dashed var(--border); border-radius: 12px; padding: 1rem 1.1rem; margin-top: 1rem; }
+.disclaimer-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--black); margin-bottom: 0.4rem; }
+.disclaimer-txt { font-size: 0.72rem; color: var(--muted); line-height: 1.6; }
+
+.print-btn { width: 100%; margin-top: 0.5rem; padding: 13px; background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); cursor: pointer; transition: all 0.15s; }
+.print-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+@media print {
+  body { background: white; padding: 0; }
+  .input-card, .btn-generate, .plano-tabs, .print-btn, .hero-line { display: none; }
+  .section-tag { padding-top: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="hero-logo" viewBox="0 0 60 40"><rect x="0" y="0" width="16" height="40" rx="2" fill="#E8590C"/><circle cx="8" cy="18" r="3.5" fill="white"/><path d="M20 0h14c7.5 0 13 5.5 13 13s-5.5 13-13 13h-2l14 14h-10L24 26V40h-4V0z" fill="white"/><circle cx="34" cy="13" r="4" fill="#0A0A0A"/></svg>
+      <span class="hero-brand-txt">Industrias Rincón · Línea Maquinaria</span>
+    </div>
+    <div class="hero-eyebrow">Calculadora de diseño hidráulico</div>
+    <h1 class="hero-title">Bomba de<br><span>Ariete</span> Hidráulica</h1>
+    <p class="hero-desc">Herramienta de dimensionamiento para bombas de ariete. Bombea agua sin electricidad ni combustible, usando solo la energía del propio caudal. Ideal para fincas con desnivel en el oriente de Cundinamarca.</p>
+    <div class="hero-line">// INGRESÁ LAS 7 VARIABLES → GENERAR DISEÑO</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="section-tag">Variables de entrada</div>
+  <div class="section-title">Datos del proyecto</div>
+  <div class="section-sub">Medí en campo estos valores antes de calcular. Entre más precisos, mejor el diseño.</div>
+
+  <div class="input-card">
+    <!-- Q -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">1</span> Caudal disponible <span class="field-hint">(agua de la fuente)</span></div>
+      <div class="input-row">
+        <div class="input-box"><input type="number" id="q_val" placeholder="0" step="0.1"><span class="unit-tag" id="q_unit_tag">L/s</span></div>
+      </div>
+      <div class="seg" style="margin-top:6px">
+        <button class="seg-btn active" data-q-unit="ls">Litros / seg</button>
+        <button class="seg-btn" data-q-unit="m3h">m³ / hora</button>
+      </div>
+    </div>
+    <!-- Hf -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">2</span> Altura de alimentación (Hf) <span class="field-hint">caída disponible</span></div>
+      <div class="input-box"><input type="number" id="hf_val" placeholder="0" step="0.1"><span class="unit-tag">metros</span></div>
+    </div>
+    <!-- Hi -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">3</span> Altura de impulsión (Hi) <span class="field-hint">a dónde subir el agua</span></div>
+      <div class="input-box"><input type="number" id="hi_val" placeholder="0" step="0.1"><span class="unit-tag">metros</span></div>
+    </div>
+    <!-- L -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">4</span> Longitud tubería alimentación (L)</div>
+      <div class="input-box"><input type="number" id="l_val" placeholder="0" step="0.1"><span class="unit-tag">metros</span></div>
+    </div>
+    <!-- Li -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">5</span> Longitud tubería impulsión (Li)</div>
+      <div class="input-box"><input type="number" id="li_val" placeholder="0" step="0.1"><span class="unit-tag">metros</span></div>
+    </div>
+    <!-- Material -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">6</span> Material de construcción</div>
+      <div class="seg">
+        <button class="seg-btn active" data-mat="pvc">PVC</button>
+        <button class="seg-btn" data-mat="galv">Acero Galv.</button>
+        <button class="seg-btn" data-mat="inox">Inoxidable</button>
+      </div>
+    </div>
+    <!-- Eficiencia -->
+    <div class="field">
+      <div class="field-label"><span class="field-num">7</span> Eficiencia deseada <span class="field-hint">según calidad de construcción</span></div>
+      <div class="seg">
+        <button class="seg-btn" data-ef="0.5">50%</button>
+        <button class="seg-btn active" data-ef="0.6">60%</button>
+        <button class="seg-btn" data-ef="0.7">70%</button>
+      </div>
+    </div>
+
+    <button class="btn-generate" onclick="generar()">⚙ Generar Bomba</button>
+  </div>
+
+  <div id="results"></div>
+
+</div>
+
+<script>
+let state = { qUnit:'ls', mat:'pvc', ef:0.6 };
+
+document.querySelectorAll('[data-q-unit]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-q-unit]').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); state.qUnit=b.dataset.qUnit;
+  document.getElementById('q_unit_tag').textContent = state.qUnit==='ls'?'L/s':'m³/h';
+});
+document.querySelectorAll('[data-mat]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-mat]').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); state.mat=b.dataset.mat;
+});
+document.querySelectorAll('[data-ef]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-ef]').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); state.ef=parseFloat(b.dataset.ef);
+});
+
+const MAT = {
+  pvc:  { name:'PVC presión RDE 21', densidad:1380, esfuerzo:25, costoFactor:1.0, presionMax:16 },
+  galv: { name:'Acero galvanizado', densidad:7850, esfuerzo:140, costoFactor:2.2, presionMax:40 },
+  inox: { name:'Acero inoxidable 304', densidad:8000, esfuerzo:215, costoFactor:4.5, presionMax:60 }
+};
+
+function fmt(n, d=2){ return Number(n).toLocaleString('es-CO',{minimumFractionDigits:d, maximumFractionDigits:d}); }
+function fmt0(n){ return Math.round(n).toLocaleString('es-CO'); }
+
+function diamPorCaudal(q_ls){
+  if(q_ls < 0.5) return {pulg:'1"', mm:25};
+  if(q_ls <= 2)  return {pulg:'2"', mm:50};
+  if(q_ls <= 5)  return {pulg:'3"', mm:75};
+  // diametro hidraulico optimo aprox para v=1.0 m/s
+  const q_m3s = q_ls/1000;
+  const d = Math.sqrt((4*q_m3s)/(Math.PI*1.0))*1000;
+  const pulg = (d/25.4).toFixed(1);
+  return {pulg:pulg+'"', mm:Math.round(d)};
+}
+
+function generar(){
+  const qRaw = parseFloat(document.getElementById('q_val').value);
+  const hf = parseFloat(document.getElementById('hf_val').value);
+  const hi = parseFloat(document.getElementById('hi_val').value);
+  const L  = parseFloat(document.getElementById('l_val').value);
+  const Li = parseFloat(document.getElementById('li_val').value);
+
+  if(!qRaw || !hf || !hi || !L || !Li || qRaw<=0 || hf<=0 || hi<=0){
+    alert('Completá todas las variables con valores mayores a cero.');
+    return;
+  }
+
+  // Caudal a L/s
+  const q_ls = state.qUnit==='ls' ? qRaw : (qRaw*1000/3600);
+  const q_m3h = q_ls*3.6;
+  const q_m3s = q_ls/1000;
+
+  const mat = MAT[state.mat];
+  const ef = state.ef;
+  const g = 9.81, rho = 1000;
+
+  // Relacion
+  const R = hi/hf;
+
+  // Caudal bombeado (D'Aubuisson aproximado con eficiencia)
+  // q_bombeado = ef * Q * Hf / Hi
+  const q_bomb_ls = ef * q_ls * (hf/hi);
+  const q_desp_ls = q_ls - q_bomb_ls;
+
+  // Eficiencia real (Rankine) - usa volumenes
+  const efReal = (q_bomb_ls*hi)/(q_ls*hf);
+
+  // Potencia hidraulica util (W) = rho*g*Q_bomb*Hi
+  const potW = rho*g*(q_bomb_ls/1000)*hi;
+
+  // Presion estatica impulsion
+  const presEstatica = (rho*g*hi)/1e5; // bar
+
+  // Golpe de ariete (Joukowsky) - celeridad aprox
+  const celeridad = mat.name.includes('PVC')?400:1200; // m/s aprox
+  const diamA = diamPorCaudal(q_ls);
+  const areaA = Math.PI*Math.pow(diamA.mm/1000,2)/4;
+  const velocidad = q_m3s/areaA; // m/s en tuberia alimentacion
+  const sobrepresion = (rho*celeridad*velocidad)/1e5; // bar
+  const presionMax = presEstatica + sobrepresion;
+
+  // Frecuencia de ciclos (empirica para ariete) ~ 40-90 golpes/min, inversa a L
+  let ciclos = Math.round(900/L);
+  ciclos = Math.max(30, Math.min(120, ciclos));
+
+  // Rendimiento
+  const rendDia = q_bomb_ls*86400/1000; // m3/dia (24h)
+  const rendMes = rendDia*30;
+
+  // Dimensionamiento tuberia alimentacion
+  const Lmin = 5*diamA.mm/1000 > hf ? (5*diamA.mm/1000) : Math.max(hf*0.5, 6);
+  const LminR = Math.max(6, Math.round(150*(diamA.mm/1000)));
+  const LmaxR = Math.round(1000*(diamA.mm/1000));
+  const espesorA = state.mat==='pvc'? Math.max(2.5, diamA.mm*0.06) : Math.max(2, diamA.mm*0.035);
+
+  // Valvula impulso
+  const diamImpulso = diamA.mm;
+  const carrera = Math.round(diamA.mm*0.25);
+  const pesoObtur = Math.round((mat.densidad*Math.PI*Math.pow(diamA.mm/1000,2)/4*0.02)*1000)/1000;
+
+  // Valvula retencion
+  const diamRet = Math.round(diamA.mm*0.7);
+
+  // Camara de aire
+  const diamCamara = Math.round(diamA.mm*2.5);
+  const altCamara = Math.round(diamCamara*3);
+  const volCamara = Math.round(Math.PI*Math.pow(diamCamara/1000,2)/4*(altCamara/1000)*1000);
+
+  // Tuberia impulsion
+  const diamImp = diamPorCaudal(q_bomb_ls);
+  const espesorImp = state.mat==='pvc'? Math.max(2.5, diamImp.mm*0.05) : Math.max(2, diamImp.mm*0.03);
+
+  // Costo aproximado (COP) muy estimado
+  const costoBase = 280000;
+  const costo = Math.round((costoBase*mat.costoFactor + diamA.mm*1800 + (L+Li)*4500)/1000)*1000;
+
+  // ALERTAS
+  let alerts = '';
+  if(R > 10) alerts += `<div class="alert warn"><span class="alert-icon">⚠</span><div>La relación Hi/Hf = <strong>${fmt(R,1)}</strong> es alta. Por encima de 10 la eficiencia cae mucho. Considerá acercar el punto de entrega o aumentar la caída de alimentación.</div></div>`;
+  if(presionMax > mat.presionMax) alerts += `<div class="alert warn"><span class="alert-icon">⚠</span><div>La presión máxima estimada (<strong>${fmt(presionMax,1)} bar</strong>) supera la presión nominal del ${mat.name} (${mat.presionMax} bar). Subí el material o reducí la velocidad del agua.</div></div>`;
+  if(L < LminR) alerts += `<div class="alert info"><span class="alert-icon">ℹ</span><div>La tubería de alimentación (${L} m) es corta. Para que el ariete golpee bien, se recomienda mínimo <strong>${LminR} m</strong>.</div></div>`;
+
+  const matLabel = state.mat==='pvc'?'PVC':state.mat==='galv'?'Acero Galvanizado':'Acero Inoxidable';
+
+  document.getElementById('results').innerHTML = `
+    ${alerts}
+
+    <div class="section-tag">01 · Resumen ejecutivo</div>
+    <div class="exec">
+      <div class="exec-label">Diseño generado</div>
+      <div class="exec-title">Bomba de Ariete ${diamA.pulg}</div>
+      <div class="exec-grid">
+        <div class="exec-stat"><div class="exec-stat-num">${fmt(q_bomb_ls,2)}</div><div class="exec-stat-label">L/s bombeados</div></div>
+        <div class="exec-stat"><div class="exec-stat-num">${fmt0(rendDia)}</div><div class="exec-stat-label">Litros / día</div></div>
+        <div class="exec-stat"><div class="exec-stat-num">${fmt(efReal*100,0)}%</div><div class="exec-stat-label">Eficiencia real</div></div>
+        <div class="exec-stat"><div class="exec-stat-num">${fmt(hi,0)}m</div><div class="exec-stat-label">Altura lograda</div></div>
+      </div>
+    </div>
+
+    <div class="section-tag">02 · Cálculos hidráulicos</div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Parámetros de funcionamiento</div>
+      <div class="drow"><div class="drow-label">Relación de funcionamiento (Hi/Hf)</div><div class="drow-val">${fmt(R,2)}</div></div>
+      <div class="drow"><div class="drow-label">Caudal disponible</div><div class="drow-val">${fmt(q_ls,2)} <span>L/s</span></div></div>
+      <div class="drow"><div class="drow-label">Caudal bombeado estimado</div><div class="drow-val">${fmt(q_bomb_ls,3)} <span>L/s</span></div></div>
+      <div class="drow"><div class="drow-label">Caudal desperdiciado (descarga)</div><div class="drow-val">${fmt(q_desp_ls,3)} <span>L/s</span></div></div>
+      <div class="drow"><div class="drow-label">Eficiencia real (Rankine)</div><div class="drow-val">${fmt(efReal*100,1)} <span>%</span></div></div>
+      <div class="drow"><div class="drow-label">Potencia hidráulica útil</div><div class="drow-val">${fmt(potW,1)} <span>W</span></div></div>
+      <div class="drow"><div class="drow-label">Presión estática de impulsión</div><div class="drow-val">${fmt(presEstatica,2)} <span>bar</span></div></div>
+      <div class="drow"><div class="drow-label">Sobrepresión por golpe de ariete</div><div class="drow-val">${fmt(sobrepresion,2)} <span>bar</span></div></div>
+      <div class="drow"><div class="drow-label">Presión máxima estimada</div><div class="drow-val">${fmt(presionMax,2)} <span>bar</span></div></div>
+      <div class="drow"><div class="drow-label">Velocidad en tubería alimentación</div><div class="drow-val">${fmt(velocidad,2)} <span>m/s</span></div></div>
+      <div class="drow"><div class="drow-label">Frecuencia de ciclos estimada</div><div class="drow-val">${ciclos} <span>golpes/min</span></div></div>
+      <div class="drow"><div class="drow-label">Rendimiento diario (24h)</div><div class="drow-val">${fmt0(rendDia)} <span>L/día</span></div></div>
+      <div class="drow"><div class="drow-label">Rendimiento mensual</div><div class="drow-val">${fmt0(rendMes)} <span>L/mes</span></div></div>
+    </div>
+
+    <div class="section-tag">03 · Dimensionamiento recomendado</div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Tubería de alimentación</div>
+      <div class="drow"><div class="drow-label">Diámetro recomendado</div><div class="drow-val">${diamA.pulg} <span>(${diamA.mm} mm)</span></div></div>
+      <div class="drow"><div class="drow-label">Longitud mínima recomendada</div><div class="drow-val">${LminR} <span>m</span></div></div>
+      <div class="drow"><div class="drow-label">Longitud máxima recomendada</div><div class="drow-val">${LmaxR} <span>m</span></div></div>
+      <div class="drow"><div class="drow-label">Espesor de pared</div><div class="drow-val">${fmt(espesorA,1)} <span>mm</span></div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Válvula de impulso (clapeta)</div>
+      <div class="drow"><div class="drow-label">Diámetro</div><div class="drow-val">${diamImpulso} <span>mm</span></div></div>
+      <div class="drow"><div class="drow-label">Carrera</div><div class="drow-val">${carrera} <span>mm</span></div></div>
+      <div class="drow"><div class="drow-label">Peso del obturador</div><div class="drow-val">${fmt(pesoObtur,2)} <span>kg</span></div></div>
+      <div class="drow"><div class="drow-label">Material sugerido</div><div class="drow-val">${matLabel}</div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Válvula de retención</div>
+      <div class="drow"><div class="drow-label">Diámetro</div><div class="drow-val">${diamRet} <span>mm</span></div></div>
+      <div class="drow"><div class="drow-label">Tipo</div><div class="drow-val">Check de resorte / disco</div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Cámara de aire</div>
+      <div class="drow"><div class="drow-label">Diámetro</div><div class="drow-val">${diamCamara} <span>mm</span></div></div>
+      <div class="drow"><div class="drow-label">Altura</div><div class="drow-val">${altCamara} <span>mm</span></div></div>
+      <div class="drow"><div class="drow-label">Volumen aprox.</div><div class="drow-val">${volCamara} <span>L</span></div></div>
+    </div>
+    <div class="data-card">
+      <div class="data-card-title"><span class="dot"></span>Tubería de impulsión</div>
+      <div class="drow"><div class="drow-label">Diámetro</div><div class="drow-val">${diamImp.pulg} <span>(${diamImp.mm} mm)</span></div></div>
+      <div class="drow"><div class="drow-label">Espesor de pared</div><div class="drow-val">${fmt(espesorImp,1)} <span>mm</span></div></div>
+    </div>
+
+    <div class="section-tag">04 · Lista de materiales</div>
+    <div class="data-card" style="padding-top:1.25rem">
+      <table class="mat-table">
+        <thead><tr><th>Descripción</th><th>Cant.</th><th>Medida</th><th>Material</th></tr></thead>
+        <tbody>
+          <tr><td>Tubería alimentación</td><td class="mono">${LminR} m</td><td class="mono">${diamA.pulg}</td><td>${matLabel}</td></tr>
+          <tr><td>Tubería impulsión</td><td class="mono">${Li} m</td><td class="mono">${diamImp.pulg}</td><td>${matLabel}</td></tr>
+          <tr><td>Cuerpo de bomba (Tee)</td><td class="mono">1</td><td class="mono">${diamA.pulg}</td><td>${matLabel}</td></tr>
+          <tr><td>Válvula de impulso</td><td class="mono">1</td><td class="mono">⌀${diamImpulso}mm</td><td>${matLabel}</td></tr>
+          <tr><td>Válvula de retención</td><td class="mono">1</td><td class="mono">⌀${diamRet}mm</td><td>Bronce/Inox</td></tr>
+          <tr><td>Cámara de aire</td><td class="mono">1</td><td class="mono">⌀${diamCamara}×${altCamara}mm</td><td>${matLabel}</td></tr>
+          <tr><td>Manómetro 0–${Math.ceil(mat.presionMax)} bar</td><td class="mono">1</td><td class="mono">¼"</td><td>—</td></tr>
+          <tr><td>Válvula de purga aire</td><td class="mono">1</td><td class="mono">⌀6mm</td><td>Bronce</td></tr>
+          <tr><td>Uniones / codos / accesorios</td><td class="mono">Var.</td><td class="mono">${diamA.pulg}</td><td>${matLabel}</td></tr>
+          <tr><td>Base de anclaje</td><td class="mono">1</td><td class="mono">—</td><td>Concreto/Acero</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-tag">05 · Esquemas dimensionados</div>
+    <div class="plano-card">
+      <div class="plano-tabs">
+        <button class="plano-tab active" data-view="lateral">Vista lateral</button>
+        <button class="plano-tab" data-view="frontal">Vista frontal</button>
+        <button class="plano-tab" data-view="superior">Vista superior</button>
+        <button class="plano-tab" data-view="explotado">Explotado</button>
+        <button class="plano-tab" data-view="ensamblaje">Ensamblaje</button>
+      </div>
+      <div class="plano-view" id="planoView"></div>
+      <div class="plano-note">Esquemas proporcionales con dimensiones orientativas en mm. NO son planos de fabricación finales — sirven como punto de partida de diseño. El prototipo debe validarse físicamente en taller antes de producir en serie.</div>
+    </div>
+
+    <div class="section-tag">06 · Recomendaciones de construcción</div>
+    <div class="rec-card">
+      <div class="rec-item"><span class="rec-check">01</span><div class="rec-txt">Montá la tubería de alimentación con <strong>pendiente recta y constante</strong>, sin tramos horizontales ni curvas innecesarias. El golpe de ariete necesita una columna de agua rígida.</div></div>
+      <div class="rec-item"><span class="rec-check">02</span><div class="rec-txt">Anclá el cuerpo de la bomba en una <strong>base firme de concreto</strong>. La vibración del golpe es constante y afloja todo lo que no esté fijo.</div></div>
+      <div class="rec-item"><span class="rec-check">03</span><div class="rec-txt">La válvula de impulso debe poder <strong>ajustarse en peso y carrera</strong> en campo. Ahí se afina el rendimiento real de cada instalación.</div></div>
+      <div class="rec-item"><span class="rec-check">04</span><div class="rec-txt">Probá primero con <strong>presión de aire en la cámara</strong> a la mitad de la presión de impulsión. Sin aire, la bomba golpea seco y se daña.</div></div>
+      <div class="rec-item"><span class="rec-check">05</span><div class="rec-txt">Instalá una <strong>rejilla o filtro</strong> en la toma de agua. Hojas y arena traban la válvula de impulso.</div></div>
+    </div>
+
+    <div class="section-tag">07 · Recomendaciones de mantenimiento</div>
+    <div class="rec-card">
+      <div class="rec-item"><span class="rec-check">01</span><div class="rec-txt"><strong>Semanal:</strong> revisar que la válvula de impulso golpee parejo. Si pierde ritmo, recargar aire en la cámara.</div></div>
+      <div class="rec-item"><span class="rec-check">02</span><div class="rec-txt"><strong>Mensual:</strong> limpiar el filtro de la toma y revisar empaques de las válvulas.</div></div>
+      <div class="rec-item"><span class="rec-check">03</span><div class="rec-txt"><strong>Trimestral:</strong> verificar torque de uniones y estado de la base de anclaje.</div></div>
+      <div class="rec-item"><span class="rec-check">04</span><div class="rec-txt"><strong>Anual:</strong> cambiar obturador y resortes de las válvulas, son las piezas de desgaste.</div></div>
+    </div>
+
+    <div class="section-tag">08 · Costo aproximado de fabricación</div>
+    <div class="cost-card">
+      <div class="cost-label">Estimado en taller — materiales + mano de obra</div>
+      <div class="cost-num">$${fmt0(costo)} COP</div>
+      <div class="cost-sub">Rango orientativo en ${matLabel}. No incluye transporte ni instalación en sitio. El costo real depende de precios locales de tubería y accesorios al momento de fabricar.</div>
+    </div>
+
+    <div class="disclaimer">
+      <div class="disclaimer-title">⚙ Nota de ingeniería</div>
+      <div class="disclaimer-txt">Esta herramienta entrega un <strong>predimensionamiento basado en fórmulas hidráulicas estándar</strong> (Rankine / D'Aubuisson para caudal bombeado, Joukowsky para golpe de ariete). Los valores son estimaciones de diseño y deben validarse con un prototipo físico antes de producción en serie. La presión real del golpe de ariete es una fuerza significativa: trabajá siempre con el material adecuado a la presión máxima calculada y un margen de seguridad. Industrias Rincón es responsable de validar cada diseño en taller.</div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">↓ Guardar / Imprimir informe (PDF)</button>
+  `;
+
+  document.getElementById('results').classList.add('show');
+
+  // PLANOS
+  const planos = buildPlanos(diamA.mm, diamCamara, altCamara, diamImp.mm, LminR);
+  const planoView = document.getElementById('planoView');
+  planoView.innerHTML = planos.lateral;
+  document.querySelectorAll('.plano-tab').forEach(t=>t.onclick=()=>{
+    document.querySelectorAll('.plano-tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    planoView.innerHTML = planos[t.dataset.view];
+  });
+
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function buildPlanos(dA, dCam, hCam, dImp, Lmin){
+  // escala visual fija; cotas reales mostradas
+  const lateral = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+    <!-- tuberia alimentacion inclinada -->
+    <line x1="20" y1="40" x2="120" y2="180" class="plano-part" stroke-width="6"/>
+    <text x="30" y="100" class="plano-cota" transform="rotate(54 30 100)">Aliment. ⌀${dA}mm · L=${Lmin}m</text>
+    <!-- cuerpo bomba (Tee) -->
+    <rect x="110" y="175" width="70" height="22" class="plano-part-fill" rx="2"/>
+    <text x="118" y="215" class="plano-label">Cuerpo</text>
+    <!-- valvula impulso (abajo) -->
+    <rect x="135" y="197" width="22" height="26" class="plano-part-fill"/>
+    <line x1="146" y1="223" x2="146" y2="245" class="plano-cota-line"/>
+    <text x="150" y="240" class="plano-cota">Válv. impulso</text>
+    <!-- camara de aire (arriba) -->
+    <rect x="185" y="120" width="${Math.min(60,dCam/4)}" height="75" class="plano-part-fill" rx="3"/>
+    <text x="190" y="115" class="plano-label">Cámara aire</text>
+    <line x1="${185+Math.min(60,dCam/4)+5}" y1="120" x2="${185+Math.min(60,dCam/4)+5}" y2="195" class="plano-cota-line"/>
+    <text x="${185+Math.min(60,dCam/4)+8}" y="160" class="plano-cota">H=${hCam}mm</text>
+    <!-- tuberia impulsion -->
+    <line x1="215" y1="120" x2="215" y2="30" class="plano-part" stroke-width="5"/>
+    <line x1="215" y1="30" x2="290" y2="30" class="plano-part" stroke-width="5"/>
+    <text x="225" y="22" class="plano-cota">Impulsión ⌀${dImp}mm</text>
+    <!-- agua -->
+    <circle cx="146" cy="208" r="3" class="plano-water"/>
+    <text x="10" y="270" class="plano-cota">VISTA LATERAL · cotas en mm</text>
+  </svg>`;
+
+  const frontal = `<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+    <rect x="90" y="100" width="100" height="30" class="plano-part-fill" rx="2"/>
+    <text x="110" y="150" class="plano-label">Cuerpo bomba</text>
+    <line x1="90" y1="95" x2="190" y2="95" class="plano-cota-line"/>
+    <text x="120" y="88" class="plano-cota">${dA*3}mm</text>
+    <ellipse cx="140" cy="70" rx="${Math.min(40,dCam/6)}" ry="14" class="plano-part-fill"/>
+    <text x="115" y="55" class="plano-label">Cámara</text>
+    <rect x="128" y="130" width="24" height="28" class="plano-part-fill"/>
+    <text x="100" y="175" class="plano-cota">Válv. impulso ⌀${dA}mm</text>
+    <text x="10" y="270" class="plano-cota">VISTA FRONTAL · cotas en mm</text>
+  </svg>`;
+
+  const superior = `<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+    <line x1="20" y1="140" x2="100" y2="140" class="plano-part" stroke-width="8"/>
+    <text x="25" y="130" class="plano-cota">Alimentación ⌀${dA}mm</text>
+    <circle cx="140" cy="140" r="35" class="plano-part-fill"/>
+    <text x="118" y="144" class="plano-label">Bomba</text>
+    <line x1="175" y1="140" x2="255" y2="140" class="plano-part" stroke-width="6"/>
+    <text x="180" y="130" class="plano-cota">Impulsión ⌀${dImp}mm</text>
+    <line x1="105" y1="175" x2="175" y2="175" class="plano-cota-line"/>
+    <text x="120" y="195" class="plano-cota">${dA*3}mm</text>
+    <text x="10" y="270" class="plano-cota">VISTA SUPERIOR · cotas en mm</text>
+  </svg>`;
+
+  const explotado = `<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="140" width="40" height="20" class="plano-part-fill"/><text x="22" y="178" class="plano-cota">1·Aliment.</text>
+    <rect x="80" y="138" width="44" height="24" class="plano-part-fill"/><text x="82" y="180" class="plano-cota">2·Tee cuerpo</text>
+    <rect x="92" y="180" width="20" height="24" class="plano-part-fill"/><text x="78" y="222" class="plano-cota">3·V.impulso</text>
+    <rect x="144" y="138" width="22" height="24" class="plano-part-fill"/><text x="140" y="178" class="plano-cota">4·V.reten.</text>
+    <rect x="186" y="100" width="34" height="60" class="plano-part-fill" rx="3"/><text x="184" y="178" class="plano-cota">5·Cámara</text>
+    <rect x="240" y="140" width="40" height="18" class="plano-part-fill"/><text x="242" y="178" class="plano-cota">6·Impulsión</text>
+    <line x1="60" y1="150" x2="80" y2="150" class="plano-cota-line" stroke-dasharray="3"/>
+    <line x1="124" y1="150" x2="144" y2="150" class="plano-cota-line" stroke-dasharray="3"/>
+    <line x1="166" y1="150" x2="186" y2="150" class="plano-cota-line" stroke-dasharray="3"/>
+    <line x1="220" y1="150" x2="240" y2="150" class="plano-cota-line" stroke-dasharray="3"/>
+    <text x="10" y="285" class="plano-cota">PLANO EXPLOTADO · secuencia de ensamblaje</text>
+  </svg>`;
+
+  const ensamblaje = `<svg viewBox="0 0 320 290" xmlns="http://www.w3.org/2000/svg">
+    <line x1="20" y1="60" x2="110" y2="185" class="plano-part" stroke-width="6"/>
+    <rect x="105" y="180" width="75" height="24" class="plano-part-fill" rx="2"/>
+    <rect x="132" y="204" width="22" height="26" class="plano-part-fill"/>
+    <rect x="183" y="115" width="40" height="80" class="plano-part-fill" rx="3"/>
+    <line x1="218" y1="115" x2="218" y2="30" class="plano-part" stroke-width="5"/>
+    <line x1="218" y1="30" x2="295" y2="30" class="plano-part" stroke-width="5"/>
+    <rect x="100" y="232" width="90" height="10" fill="var(--black)"/>
+    <text x="105" y="258" class="plano-cota">Base de anclaje en concreto</text>
+    <text x="125" y="175" class="plano-label">①</text>
+    <text x="143" y="222" class="plano-label" fill="white">②</text>
+    <text x="198" y="160" class="plano-label">③</text>
+    <text x="250" y="22" class="plano-cota">④ salida</text>
+    <text x="10" y="280" class="plano-cota">PLANO DE ENSAMBLAJE · conjunto montado</text>
+  </svg>`;
+
+  return {lateral, frontal, superior, explotado, ensamblaje};
+}
+</script>
+</body>
+</html>
