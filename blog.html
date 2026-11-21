@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- ===== SEO ===== -->
+<title>Blog | Consejos de malla y maquinaria agrícola — Industrias Rincón</title>
+<meta name="description" content="Guías prácticas sobre malla eslabonada, cerramientos, maquinaria agrícola y riego para agricultores y fincas del oriente de Cundinamarca. Por Industrias Rincón, Fómeque.">
+<meta name="keywords" content="blog agricultura, malla eslabonada, cerramiento finca, maquinaria agrícola, riego, Fómeque, Cundinamarca">
+<meta name="author" content="Industrias Rincón">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#E8590C">
+<link rel="canonical" href="https://industriasrincon.com/blog.html">
+<meta name="geo.region" content="CO-CUN">
+<meta name="geo.placename" content="Fómeque, Cundinamarca">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Industrias Rincón">
+<meta property="og:title" content="Blog | Consejos de malla y maquinaria agrícola">
+<meta property="og:description" content="Guías prácticas sobre malla eslabonada, cerramientos y maquinaria agrícola. Por Industrias Rincón, Fómeque.">
+<meta property="og:url" content="https://industriasrincon.com/blog.html">
+<meta property="og:image" content="https://industriasrincon.com/logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#E8590C; --orange-light:rgba(232,89,12,0.08);
+  --black:#0A0A0A; --white:#FFFFFF; --gray:#F5F5F3;
+  --muted:#6B7280; --text:#1F2937; --border:rgba(0,0,0,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--orange);text-decoration:none}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1000px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo svg{height:34px;width:auto}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--black)}
+.nav-logo-text b:last-child{color:var(--orange)}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:.9rem;font-weight:600}
+.nav-links a{color:var(--text)}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:#fff !important;padding:8px 16px;border-radius:8px}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+/* HEADER */
+.blog-head{max-width:1000px;margin:0 auto;padding:56px 24px 20px;text-align:center}
+.eyebrow{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);font-size:.9rem;margin-bottom:10px}
+.blog-head h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:3rem;line-height:1;color:var(--black);margin-bottom:12px}
+.blog-head p{color:var(--muted);max-width:560px;margin:0 auto;font-size:1.05rem}
+
+/* GRID */
+.posts{max-width:1000px;margin:0 auto;padding:36px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.card{display:block;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s;background:#fff}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,0.08);border-color:transparent}
+.card-top{background:var(--black);padding:30px 24px;position:relative}
+.card-top .tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;color:var(--orange);background:rgba(232,89,12,0.15);padding:4px 10px;border-radius:50px}
+.card-top h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.1;color:#fff;margin-top:14px}
+.card-body{padding:22px 24px 26px}
+.card-body p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+.card-link{font-weight:700;font-size:.9rem;color:var(--orange)}
+.soon{opacity:.6;pointer-events:none}
+.soon .card-top h2{color:#cbd5e1}
+
+/* FOOTER */
+.footer{background:var(--black);color:rgba(255,255,255,0.4);text-align:center;padding:2.4rem 1.5rem;font-size:.78rem}
+
+/* BOTÓN FLOTANTE */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:999;display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 20px 14px 16px;border-radius:50px;font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:all .25s}
+.wa-float:hover{background:#1fb859;transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.5)}
+.wa-float svg{width:28px;height:28px;fill:#fff;flex-shrink:0}
+@media(max-width:768px){.wa-float{padding:14px}.wa-float .wa-float-text{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Industrias Rincón — Inicio">
+      <svg viewBox="0 0 90 70" role="img" aria-label="Industrias Rincón">
+        <rect x="0" y="0" width="24" height="70" fill="#E8590C"/>
+        <rect x="24" y="0" width="16" height="70" fill="#0A0A0A"/>
+        <circle cx="50" cy="22" r="22" fill="#0A0A0A"/>
+        <polygon points="40,38 56,38 84,70 64,70" fill="#0A0A0A"/>
+        <circle cx="52" cy="22" r="10" fill="#FFFFFF"/>
+        <circle cx="24" cy="40" r="7" fill="#FFFFFF"/>
+      </svg>
+      <span class="nav-logo-text"><b>INDUSTRIAS</b><b>RINCÓN</b></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="malla.html">Malla</a>
+      <a href="maquinaria.html">Maquinaria</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="blog-head">
+  <span class="eyebrow">Blog</span>
+  <h1>CONSEJOS DEL CAMPO</h1>
+  <p>Guías prácticas sobre malla, cerramientos y maquinaria agrícola. Escritas por quienes fabricamos, para quienes trabajan la tierra.</p>
+</header>
+
+<section class="posts">
+
+  <a class="card" href="blog-calibres-malla.html">
+    <div class="card-top">
+      <span class="tag">Malla</span>
+      <h2>¿Qué calibre de malla eslabonada elegir para tu finca?</h2>
+    </div>
+    <div class="card-body">
+      <p>Calibre, altura y galvanizado según el uso: cerramiento, corral, cancha o seguridad. Más una tabla rápida para no equivocarte.</p>
+      <span class="card-link">Leer guía →</span>
+    </div>
+  </a>
+
+  <div class="card soon">
+    <div class="card-top">
+      <span class="tag">Riego</span>
+      <h2>Bomba de ariete: cómo subir agua sin luz ni combustible</h2>
+    </div>
+    <div class="card-body">
+      <p>Próximamente: cómo funciona la bomba de ariete y en qué fincas conviene instalarla.</p>
+      <span class="card-link">Muy pronto</span>
+    </div>
+  </div>
+
+  <div class="card soon">
+    <div class="card-top">
+      <span class="tag">Instalación</span>
+      <h2>Cómo medir tu lote para cotizar un cerramiento</h2>
+    </div>
+    <div class="card-body">
+      <p>Próximamente: paso a paso para medir el perímetro y calcular cuánta malla necesitas.</p>
+      <span class="card-link">Muy pronto</span>
+    </div>
+  </div>
+
+</section>
+
+<footer class="footer">© 2026 Industrias Rincón — Fómeque, Cundinamarca, Colombia</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a class="wa-float" href="https://wa.me/573212317971?text=Hola%20Industrias%20Rinc%C3%B3n%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20cotizar." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.519 5.263l-.999 3.648 3.739-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span class="wa-float-text">Cotizar</span>
+</a>
+
+</body>
+</html>
